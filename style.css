@@ -1,10 +1,14 @@
 /*Styling for Accodion Feature*/
 
+.accordion-container {
+    padding: 30px;
+    background-color: #f1f1f1; /* Gray background color */
+}
+
 .accordion {
     display: flex;
     flex-direction: column;
-    max-width: 400px;
-    padding: 30px; /* Add 30px padding above the accordion */
+    max-width: 800px;
 }
 
 .accordion-item {
@@ -18,7 +22,7 @@
     align-items: center;
     padding: 10px;
     cursor: pointer;
-    background-color: #f1f1f1;
+    background-color: #fff; /* Header background color */
     border-bottom: 1px solid #ccc;
 }
 
@@ -28,8 +32,11 @@
 }
 
 .accordion-header.open {
-    background-color: #f1f1f1;
+    background-color: #fff;
     font-weight: bold; /* or any other style you prefer */
 }
+
+
+
 
 
