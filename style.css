@@ -8,7 +8,7 @@
 .accordion {
     display: flex;
     flex-direction: column;
-    max-width: 800px;
+    max-width: 1000px;
 }
 
 .accordion-item {
@@ -36,10 +36,22 @@
     font-weight: bold; /* or any other style you prefer */
 }
 
-/*Styling for Heashotiage Feature*/
+/*Styling for Heashot image Feature*/
 .head-img {
-  width: 300px;
+  width: 200px;
   height: 200px;
+
+/* Style for the tooltip */
+.tooltip {
+    position: absolute;
+    text-align: center;
+    padding: 6px;
+    font: 20px sans-serif;
+    background: lightsteelblue; /* Keeping the background the same */
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+    opacity: 1; /* Fully opaque */
 }
 
 
