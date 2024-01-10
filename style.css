@@ -29,6 +29,7 @@
 .accordion-content {
     display: none;
     padding: 10px;
+    transition: display 0.3s ease-out;
 }
 
 .accordion-header.open {
@@ -38,8 +39,10 @@
 
 /*Styling for Heashot image Feature*/
 .head-img {
-  width: 200px;
-  height: 200px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover; /* or any other value based on your design preference */
+}
 
 /* Style for the tooltip */
 .tooltip {
@@ -54,6 +57,45 @@
     opacity: 1; /* Fully opaque */
 }
 
+/* Style for the menu */
+.navbar {
+    background-color: #333;
+    position: relative;
+    z-index: 999;
 
+}
 
+.navbar ul {
+list-style-type: none;
+margin: 0;
+padding: 0;
+}
 
+.navbar li {
+display: inline-block;
+}
+
+.navbar li a {
+color: white;
+display: block;
+padding: 10px 20px;
+text-decoration: none;
+}
+
+.navbar ul ul {
+position: absolute;
+top: 100%;
+display: none;
+}
+
+.navbar ul ul li {
+display: block;
+}
+
+.navbar li:hover ul {
+display: block;
+}
+
+.navbar ul ul li a:hover {
+background-color: #555;
+}

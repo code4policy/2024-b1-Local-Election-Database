@@ -1,5 +1,5 @@
-// Code for the Accordion feature motion 
 document.addEventListener('DOMContentLoaded', function () {
+    // Accordion feature motion
     const accordionHeaders = document.querySelectorAll('.accordion-header');
 
     accordionHeaders.forEach(header => {
@@ -18,6 +18,5 @@ document.addEventListener('DOMContentLoaded', function () {
             this.textContent = this.classList.contains('open') ? '- ' + header.getAttribute('data-title') : '+ ' + header.getAttribute('data-title');
         });
     });
-});
 
 
