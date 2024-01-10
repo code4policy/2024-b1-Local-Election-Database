@@ -48,6 +48,21 @@ h5 {
   line-height: 1; /* Adjust the line height */
 }
 
+/* styles for hover button */
+.blue-btn {
+            padding: 10px 20px;
+            text-decoration: none;
+            background-color: #004179;
+            color: #fff;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        .blue-btn:hover {
+            background-color: #2F75DD;
+        }
+
 /* Styling for Accordion Feature */
 .accordion-container {
   padding: 30px 30px 30px 30px;
