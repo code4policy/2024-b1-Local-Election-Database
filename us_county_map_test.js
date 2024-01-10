@@ -1,6 +1,6 @@
 // Define the dimensions of the map
-const width = 1200,
-      height = 1000;
+const width = 1000,
+      height = 800;
 
 // Create an SVG element in your document to hold the map
 const svg = d3.select("#map").append("svg")
@@ -9,7 +9,7 @@ const svg = d3.select("#map").append("svg")
 
 // Define a projection for the map
 const projection = d3.geoAlbersUsa()
-    .scale(1500)
+    .scale(1000)
     .translate([width / 2, height / 2]);
 
 // Define a path generator using the projection

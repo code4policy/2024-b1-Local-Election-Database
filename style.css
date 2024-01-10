@@ -1,3 +1,52 @@
+/* Set body dimensions */
+body {
+  margin: 0 auto;
+  align-content: center;
+  background-color: #FAF8F8;
+  padding: 20px 20px 20px 20px;
+}
+
+/* Customizing Paragraph Text */
+p {
+  font-size: 14px; /* Change the font size */
+  color: #333; /* Change the text color */
+  line-height: 1.5; /* Adjust the line height */
+}
+
+a {
+  color: royalblue;
+}
+
+h1 {
+  font-size: 30px; /* Change the font size */
+  color: #333; /* Change the text color */
+  line-height: 1; /* Adjust the line height */ 
+}
+
+h2 {
+  font-size: 25px; /* Change the font size */
+  color: #333; /* Change the text color */
+  line-height: 1; /* Adjust the line height */
+
+}
+
+h3 {
+  font-size: 20px; /* Change the font size */
+  color: #333; /* Change the text color */
+  line-height: 1; /* Adjust the line height */
+}
+
+h4 {
+  font-size: 20px; /* Change the font size */
+  color: #333; /* Change the text color */
+  line-height: 1; /* Adjust the line height */
+}
+
+h5 {
+  font-size: 20px; /* Change the font size */
+  color: #333; /* Change the text color */
+  line-height: 1; /* Adjust the line height */
+}
 
 /* Styling for Accordion Feature */
 .accordion-container {
