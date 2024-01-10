@@ -1,0 +1,101 @@
+
+/* Styling for Accordion Feature */
+.accordion-container {
+  padding: 30px 30px 30px 30px;
+  background-color: #f1f1f1; /* Gray background color */
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+}
+
+.accordion-item {
+  border: 1px solid #ccc;
+  margin-bottom: 5px;
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff; /* Header background color */
+  border-bottom: 1px solid #ccc;
+}
+
+.accordion-content {
+  display: none;
+  padding: 10px;
+  transition: display 0.3s ease-out;
+}
+
+.accordion-header.open {
+  background-color: #fff;
+  font-weight: bold; /* or any other style you prefer */
+}
+
+/* Styling for Headshot Image Feature */
+.head-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover; /* or any other value based on your design preference */
+}
+
+/* Style for the tooltip */
+.tooltip {
+  position: absolute;
+  text-align: center;
+  padding: 6px;
+  font: 20px sans-serif;
+  background: lightsteelblue; /* Keeping the background the same */
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
+  opacity: 1; /* Fully opaque */
+}
+
+/* Style for the menu */
+.navbar {
+  background-color: #333;
+  position: relative;
+  z-index: 999;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  display: inline-block;
+}
+
+.navbar li a {
+  color: white;
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+.navbar ul ul {
+  position: absolute;
+  top: 100%;
+  display: none;
+}
+
+.navbar ul ul li {
+  display: block;
+}
+
+.navbar li:hover ul {
+  display: block;
+}
+
+.navbar ul ul li a:hover {
+  background-color: #555;
+}
+
