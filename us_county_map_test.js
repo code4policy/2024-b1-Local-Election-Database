@@ -1,5 +1,5 @@
 // Define the dimensions of the map
-const width = 1400,
+const width = 1000,
       height = 1000;
 
 // Create an SVG element in your document to hold the map
