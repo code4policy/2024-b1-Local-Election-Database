@@ -283,7 +283,7 @@ nav {
     position: absolute;
     text-align: center;
     padding: 6px;
-    font: 20px sans-serif;
+    font: 20px normal;
     background: lightsteelblue; /* Keeping the background the same */
     border: 0px;
     border-radius: 3px;
