@@ -1,3 +1,4 @@
+
 /* Set body dimensions */
 body {
   margin: 0 auto;
@@ -8,6 +9,9 @@ body {
 
 /* Customizing Paragraph Text */
 p {
+  font-family: "halyard-display", sans-serif;
+  font-weight: 300;
+  font-style: normal;
   font-size: 14px; /* Change the font size */
   color: #333; /* Change the text color */
   line-height: 1.5; /* Adjust the line height */
@@ -18,12 +22,18 @@ a {
 }
 
 h1 {
-  font-size: 30px; /* Change the font size */
+  font-family: "superior-title", serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 40px; /* Change the font size */
   color: #333; /* Change the text color */
-  line-height: 1; /* Adjust the line height */ 
+  margin-top: 0.5em; /* Adjust the space above the text */
 }
 
 h2 {
+  font-family: "superior-title", serif;
+  font-weight: 500;
+  font-style: normal;
   font-size: 25px; /* Change the font size */
   color: #333; /* Change the text color */
   line-height: 1; /* Adjust the line height */
@@ -31,12 +41,15 @@ h2 {
 }
 
 h3 {
-  font-size: 20px; /* Change the font size */
-  color: #333; /* Change the text color */
-  line-height: 1; /* Adjust the line height */
+font-family: "halyard-display", sans-serif;
+font-weight: 200;
+font-style: normal;
+font-size: 20px; /* Change the font size */
 }
 
-h4 {
+h4 {font-family: "superior-title", serif;
+  font-weight: 700;
+  font-style: normal;
   font-size: 20px; /* Change the font size */
   color: #333; /* Change the text color */
   line-height: 1; /* Adjust the line height */
