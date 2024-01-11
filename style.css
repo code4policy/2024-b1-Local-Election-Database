@@ -4,7 +4,7 @@
 .container {
   max-width: 800px; /* Adjust the max-width according to your design */
   margin: 0 auto; /* Center the container horizontally */
-  padding: 20px; /* Optional padding for the container */
+  padding: 20px 20px 20px 20px; /* Optional padding for the container */
 }
 
 main {
@@ -24,7 +24,7 @@ p {
   font-family: "halyard-display", sans-serif;
   font-weight: 300;
   font-style: normal;
-  font-size: 14px; /* Change the font size */
+  font-size: 16px; /* Change the font size */
   color: #333; /* Change the text color */
   line-height: 1.5; /* Adjust the line height */
 }
@@ -76,7 +76,7 @@ h5 {
 /* heading styling */
 header {
     background-color: #F5F3EF; /* Set your desired background color */
-    padding: 10px;
+    padding: 10px 10px 10px 10px;
 }
 
 #logo-link {
@@ -108,10 +108,28 @@ header {
             background-color: #0A0A0A;
         }
 
+.small-btn {
+            font-family: "halyard-display", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+            font-size: 12px;
+            padding: 10px 20px;
+            text-decoration: none;
+            background-color: #CC0033;
+            color: #fff;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        .small-btn:hover {
+            background-color: #0A0A0A;
+        }
+
 /* Styling for Accordion Feature */
 .accordion-container {
   padding: 30px 30px 30px 30px;
-  background-color: #f1f1f1; /* Gray background color */
+  background-color: #F5F3EF; /* Gray background color */
 }
 
 .accordion {
@@ -142,7 +160,7 @@ header {
 }
 
 .accordion-header.open {
-  background-color: #fff;
+  background-color: #F5F3EF;
   font-weight: bold; /* or any other style you prefer */
 }
 
@@ -192,7 +210,7 @@ nav {
   border: #F5F3EF;
   justify-content: space-between; /* Aligns items to the start and end of the flex container */
   align-items: center; /* Vertically centers items in the flex container */
-  padding: 20px; /* Add padding for spacing */
+  padding: 20px 20px 20px 20px; /* Add padding for spacing */
 }
 
 #logo-link {
