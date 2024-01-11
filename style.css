@@ -284,11 +284,11 @@ nav {
     text-align: center;
     padding: 6px;
     font: 20px normal;
-    background: lightsteelblue; /* Keeping the background the same */
+    background: lightsteelblue; 
     border: 0px;
     border-radius: 3px;
     pointer-events: none;
-    opacity: 1; /* Fully opaque */
+    opacity: 1; 
 }
 
 #map-legend {
