@@ -1,5 +1,17 @@
 
 /* Set body dimensions */
+
+.container {
+  max-width: 800px; /* Adjust the max-width according to your design */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 20px; /* Optional padding for the container */
+}
+
+main {
+  width: 60%; /* Set the main content width to 60% of the container */
+  margin: 0 auto; /* Center the main content horizontally */
+}
+
 body {
   margin: 0 auto;
   align-content: center;
@@ -25,7 +37,7 @@ h1 {
   font-family: "superior-title", serif;
   font-weight: 700;
   font-style: normal;
-  font-size: 40px; /* Change the font size */
+  font-size: 35px; /* Change the font size */
   color: #333; /* Change the text color */
   margin-top: 0.5em; /* Adjust the space above the text */
 }
@@ -59,6 +71,22 @@ h5 {
   font-size: 20px; /* Change the font size */
   color: #333; /* Change the text color */
   line-height: 1; /* Adjust the line height */
+}
+
+/* heading styling */
+header {
+    background-color: #F5F3EF; /* Set your desired background color */
+    padding: 10px;
+}
+
+#logo-link {
+    display: inline-block;
+}
+
+#logo-image {
+    height: 80px; /* Adjust the height of your logo as needed */
+    width: auto; /* Maintain the aspect ratio while adjusting the height */
+    padding-bottom: 30px;
 }
 
 /* styles for hover button */
@@ -154,45 +182,67 @@ h5 {
   opacity: 1; /* Fully opaque */
 }
 
-/* Style for the menu */
-.navbar {
-  background-color: #333;
-  position: relative;
-  z-index: 999;
+/*Simple Menu*/
+
+/* NAVIGATION */
+
+nav {
+  display: flex;
+  background-color:#F5F3EF;
+  border: #F5F3EF;
+  justify-content: space-between; /* Aligns items to the start and end of the flex container */
+  align-items: center; /* Vertically centers items in the flex container */
+  padding: 20px; /* Add padding for spacing */
 }
 
-.navbar ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+#logo-link {
+  margin-right: auto; /* Push the logo to the left by setting margin-right to auto */
+}
+.nav-ul { 
+  margin: 10px auto 0;  /* Adjust the top margin to reduce space */
+  padding: 0; 
+  list-style: none; 
+  display: flex; /* Change to flex to create a horizontal layout */
+  justify-content: flex-end; /* Center the items horizontally */
 }
 
-.navbar li {
-  display: inline-block;
+.nav-li { 
+  font-family: "halyard-display", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 15px; /* Change the font size */
+  position: relative; 
+  padding: 15px 20px;
+  margin-right: 20px;
 }
 
-.navbar li a {
-  color: white;
-  display: block;
-  padding: 10px 20px;
+.nav-a {
+  color: black;
+  text-transform: uppercase;
   text-decoration: none;
+  letter-spacing: 0.15em;
+  font-family: "halyard-display", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 15px; /* Change the font size */
+  position: relative;
+  margin-right: 20px;
 }
 
-.navbar ul ul {
+.nav-a:after {    
+  background: #fff repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
   position: absolute;
-  top: 100%;
-  display: none;
+  background: black;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
 }
 
-.navbar ul ul li {
-  display: block;
+.nav-a:hover:after { 
+  width: 100%; 
+  left: 0; 
 }
-
-.navbar li:hover ul {
-  display: block;
-}
-
-.navbar ul ul li a:hover {
-  background-color: #555;
-}
-
