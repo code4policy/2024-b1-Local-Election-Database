@@ -1,6 +1,11 @@
 // Define the dimensions of the map
-const width = 1200,
-      height = 1000;
+const width = 1300,
+      height = 800;
+
+// Create a tooltip within the map container
+const tooltip = d3.select("#map").append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
 
 // Create an SVG element in your document to hold the map
 const svg = d3.select("#map").append("svg")
@@ -15,11 +20,6 @@ const projection = d3.geoAlbersUsa()
 // Define a path generator using the projection
 const path = d3.geoPath()
     .projection(projection);
-
-// Create a tooltip
-const tooltip = d3.select("body").append("div")
-    .attr("class", "tooltip")
-    .style("opacity", 0);
 
 // Define a color scale
 const color = d3.scaleQuantize()
@@ -125,39 +125,39 @@ async function drawMap() {
             .style("stroke", "#000000") // Set the border color of each county to black
             .style("stroke-width", "0.2") // Set the stroke width
             .on("mouseover", function(d, event) {
-                // Function to update tooltip position and content
+                const svgRect = svg.node().getBoundingClientRect();
+                const containerRect = d3.select("#map").node().getBoundingClientRect();
+
                 const updateTooltip = (e) => {
-                    const svgTop = svg.node().getBoundingClientRect().top;
-                    const svgLeft = svg.node().getBoundingClientRect().left;
-
-                    if (!d.properties) {
-                        console.error('Missing properties for feature:', d);
-                        tooltip.html(`Feature ID ${d.id}<br/>No Data Available`);
-                    } else if (typeof d.properties.FIPS === 'undefined') {
-                        console.error('Missing FIPS for feature:', d);
-                        tooltip.html(`Feature ID ${d.id}<br/>No FIPS Available`);
-                    } else {
-                        const countyFIPS = d.properties.FIPS;
-                        const value = dataMap.has(countyFIPS) ? dataMap.get(countyFIPS) : 'No data';
-                        tooltip.html(`County: ${d.properties.NAME}<br/>Value: ${value}`);
-                    }
-
-                    // Position the tooltip in the top-left corner of the SVG (map)
-                    // Adjust the offsets (10px in this example) as needed
-                    tooltip.style("opacity", 0.9)
-                           .style("left", (svgLeft + 10) + "px")
-                           .style("top", (svgTop + 10) + "px");
+                    // Calculate the tooltip position relative to the map container
+                    const left = event.clientX - containerRect.left - 100; // 10 is an arbitrary offset
+                    const top = event.clientY - containerRect.top - 100; // Adjust this offset as needed
+                                if (!d.properties) {
+                                    console.error('Missing properties for feature:', d);
+                                    tooltip.html(`Feature ID ${d.id}<br/>No Data Available`);
+                                } else if (typeof d.properties.FIPS === 'undefined') {
+                                    console.error('Missing FIPS for feature:', d);
+                                    tooltip.html(`Feature ID ${d.id}<br/>No FIPS Available`);
+                                } else {
+                                    const countyFIPS = d.properties.FIPS;
+                                    const value = dataMap.has(countyFIPS) ? dataMap.get(countyFIPS) : 'No data';
+                                    tooltip.html(`County: ${d.properties.NAME}<br/>Value: ${value}`);
+                                }
+                    // Set the position and content of the tooltip
+                            tooltip.style("opacity", 0.9)
+                                    .style("left", `${left}px`)
+                                    .style("top", `${top}px`);
                 };
 
-                // Update the tooltip immediately without waiting for mousemove
+                // Call updateTooltip function to set initial position
                 updateTooltip(event);
 
                 // Update the tooltip on mouse move within the county
-                svg.on("mousemove", updateTooltip);
+                d3.select(window).on("mousemove.tooltip", updateTooltip);
             })
             .on("mouseout", function() {
                 // Remove the mousemove event listener when not hovering over a county
-                svg.on("mousemove", null);
+                d3.select(window).on("mousemove.tooltip", null);
 
                 tooltip.transition()
                        .duration(500)
@@ -168,49 +168,51 @@ async function drawMap() {
 d3.json("us-states.json").then(function(statesData) {
     svg.selectAll(".state-border")
         .data(statesData.features)
-        .enter().append("path")
+        .enter()
+        .append("path")
         .attr("class", "state-border")
         .attr("d", path) // Use the same path generator
         .style("fill", "none") // No fill for state borders
         .style("stroke", "black") // Style for state borders
         .style("stroke-width", "1"); // Bolder line for state borders
+
+
+    // Create a legend
+    const legend = svg.append("g")
+        .attr("class", "legend")
+        .attr("id", "map-legend") // Unique ID for the legend
+        .attr("transform", `translate(${width - 50}, 50)`);
+
+
+    const legendItemSize = 20; // Height of each legend item
+    const legendSpacing = 2; // Spacing between legend items
+
+    color.range().forEach((d, i) => {
+        legend.append("rect")
+            .attr("x", 0)
+            .attr("y", i * (legendItemSize + legendSpacing))
+            .attr("width", legendItemSize)
+            .attr("height", legendItemSize)
+            .style("fill", d)
+            .style("stroke", "white") // Set the stroke color to white
+            .style("stroke-width", "1px"); // Set the stroke width. Adjust as needed.
+    });
+
+    const legendDomain = color.domain();
+    legend.selectAll('text')
+        .data(legendDomain)
+        .enter().append('text')
+        .attr("x", legendItemSize + legendSpacing)
+        .attr("y", (d, i) => i * (legendItemSize + legendSpacing) + (legendItemSize / 2))
+        .text(d => d)
+        .style("alignment-baseline", "middle");
+
+    // Move the number 8 physically below the bottom, darkest orange box
+    legend.selectAll('text')
+        .filter(d => d === 8)
+        .attr("x", legendItemSize + legendSpacing)
+        .attr("y", (color.range().length - 1) * (legendItemSize + legendSpacing) + legendItemSize - 8);
 });
-
-// Create a legend
-const legend = svg.append("g")
-    .attr("class", "legend")
-    .attr("id", "map-legend") // Unique ID for the legend
-    .attr("transform", `translate(${width - 50}, 50)`);
-
-
-const legendItemSize = 20; // Height of each legend item
-const legendSpacing = 2; // Spacing between legend items
-
-color.range().forEach((d, i) => {
-    legend.append("rect")
-        .attr("x", 0)
-        .attr("y", i * (legendItemSize + legendSpacing))
-        .attr("width", legendItemSize)
-        .attr("height", legendItemSize)
-        .style("fill", d)
-        .style("stroke", "white") // Set the stroke color to white
-        .style("stroke-width", "1px"); // Set the stroke width. Adjust as needed.
-});
-
-const legendDomain = color.domain();
-legend.selectAll('text')
-    .data(legendDomain)
-    .enter().append('text')
-    .attr("x", legendItemSize + legendSpacing)
-    .attr("y", (d, i) => i * (legendItemSize + legendSpacing) + (legendItemSize / 2))
-    .text(d => d)
-    .style("alignment-baseline", "middle");
-
-// Move the number 8 physically below the bottom, darkest orange box
-legend.selectAll('text')
-    .filter(d => d === 8)
-    .attr("x", legendItemSize + legendSpacing)
-    .attr("y", (color.range().length - 1) * (legendItemSize + legendSpacing) + legendItemSize - 8);
 
     } catch (error) {
         // Handle any errors that occurred during the map drawing process

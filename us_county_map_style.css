@@ -2,6 +2,9 @@ body {
     font-family: Arial, sans-serif;
 }
 
+#map {
+    position: relative; /* This makes it a reference for absolute children positioning */
+}
 
 /* Style for the tooltip */
 .tooltip {
@@ -11,7 +14,7 @@ body {
     font: 20px sans-serif;
     background: lightsteelblue; /* Keeping the background the same */
     border: 0px;
-    border-radius: 8px;
+    border-radius: 3px;
     pointer-events: none;
     opacity: 1; /* Fully opaque */
 }
