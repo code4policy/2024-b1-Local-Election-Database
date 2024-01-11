@@ -265,6 +265,15 @@ nav {
   left: 0; 
 }
 
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* For centering any text content */
+    margin: 0 auto;
+}
+
 #map {
     position: relative; /* This makes it a reference for absolute children positioning */
 }
