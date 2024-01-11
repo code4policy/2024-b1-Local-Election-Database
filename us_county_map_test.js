@@ -1,6 +1,11 @@
 // Define the dimensions of the map
-const width = 1000,
-      height = 1000;
+const width = 1300,
+      height = 800;
+
+// Create a tooltip within the map container
+const tooltip = d3.select("#map").append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
 
 // Create an SVG element in your document to hold the map
 const svg = d3.select("#map").append("svg")
@@ -15,11 +20,6 @@ const projection = d3.geoAlbersUsa()
 // Define a path generator using the projection
 const path = d3.geoPath()
     .projection(projection);
-
-// Create a tooltip within the map container
-const tooltip = d3.select("#map").append("div")
-    .attr("class", "tooltip")
-    .style("opacity", 0);
 
 // Define a color scale
 const color = d3.scaleQuantize()
@@ -130,8 +130,8 @@ async function drawMap() {
 
                 const updateTooltip = (e) => {
                     // Calculate the tooltip position relative to the map container
-                    const left = event.clientX + containerRect.left; // 10 is an arbitrary offset
-                    const top = event.clientY; // Adjust this offset as needed
+                    const left = event.clientX - containerRect.left - 100; // 10 is an arbitrary offset
+                    const top = event.clientY - containerRect.top - 100; // Adjust this offset as needed
                                 if (!d.properties) {
                                     console.error('Missing properties for feature:', d);
                                     tooltip.html(`Feature ID ${d.id}<br/>No Data Available`);
@@ -222,5 +222,4 @@ d3.json("us-states.json").then(function(statesData) {
 
 // Call the function to draw the map
 drawMap();
-
 
