@@ -106,6 +106,22 @@ h5 {
   width: 200px;
   height: 200px;
   object-fit: cover; /* or any other value based on your design preference */
+  margin-right: 20px;
+  float: left; /* Add float: left; for the image positioning */
+}
+
+/* Container for each team member's section */
+.team-member {
+  display: flex;
+  align-items: flex-start; /* Align items at the start (top) of the flex container */
+  margin-bottom: 30px; /* Add some margin between team members */
+}
+
+/* Clear the float after each team member's section */
+.team-member::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 /* Style for the tooltip */
