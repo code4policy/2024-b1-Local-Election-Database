@@ -3,7 +3,7 @@
 body {
   margin: 0 auto;
   align-content: center;
-  background-color: #FAF8F8;
+  background-color: #F5F3EF;
   padding: 20px 20px 20px 20px;
 }
 
@@ -63,9 +63,13 @@ h5 {
 
 /* styles for hover button */
 .blue-btn {
+            font-family: "halyard-display", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+            font-size: 14px;
             padding: 10px 20px;
             text-decoration: none;
-            background-color: #004179;
+            background-color: #CC0033;
             color: #fff;
             border-radius: 5px;
             display: inline-block;
@@ -73,7 +77,7 @@ h5 {
         }
 
         .blue-btn:hover {
-            background-color: #2F75DD;
+            background-color: #0A0A0A;
         }
 
 /* Styling for Accordion Feature */
