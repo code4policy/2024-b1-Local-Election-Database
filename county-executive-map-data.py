@@ -7,31 +7,40 @@ df = pd.read_csv('ledb_candidatelevel.csv')
 df_county_executive = df[df['office_consolidated'] == 'County Executive']
 
 # Initialize empty lists to store results
-fips = []
-year_list =[]
+fips_list = []
+geo_name_list = []
 num_m_list = []
 num_f_list = []
+f_winner_list = []
+m_winner_list = []
+num_elections_list = []
 
-# Iterate through the grouped data to extract information
-for _, row in df.iterrows():
-    fips.append(row['fips'])
-    year_list.append(row['year'])
+# Group by 'fips' and iterate through the groups
+for fips, group in df_county_executive.groupby('fips'):
+    padded_fips = str(fips).zfill(5)
+    fips_list.append(fips)
+    geo_name_list.append(group['geo_name'].iloc[0])  # Take the first value of 'geo_name'
+    
+    # Check for NaN values in 'gender_est' column and sum up the values for each 'fips' group
+    num_m_list.append(group['gender_est'].apply(lambda x: str(x).count('M') if isinstance(x, str) else 0).sum())
+    num_f_list.append(group['gender_est'].apply(lambda x: str(x).count('F') if isinstance(x, str) else 0).sum())
+    
+    # Check for NaN values in 'gender_est' and 'winner' columns
+    f_winner_list.append(((group['gender_est'] == 'F') & (group['winner'] == 'win')).sum() if 'gender_est' in group.columns and 'winner' in group.columns else 0)
+    m_winner_list.append(((group['gender_est'] == 'M') & (group['winner'] == 'win')).sum() if 'gender_est' in group.columns and 'winner' in group.columns else 0)
+    
+    # Count unique years for the 'fips' group
+    num_elections_list.append(group['year'].nunique())
 
-# Check for NaN values in 'gender_est' column
-    if isinstance(row['gender_est'], str):
-        num_m_list.append(row['gender_est'].count('M'))
-        num_f_list.append(row['gender_est'].count('F'))
-    else:
-        # Handle NaN values, you can choose to set them to 0 or any other value
-        num_m_list.append(0)
-        num_f_list.append(0)
-
-# Create a new DataFrame with the results
+# Create a new DataFrame with the aggregated results
 result_df = pd.DataFrame({
-    'fips': fips,
-    'year': year_list,
+    'fips': fips_list,
+    'geoname': geo_name_list,
     'num_M': num_m_list,
-    'num_F': num_f_list
+    'num_F': num_f_list,
+    'f_winner': f_winner_list,
+    'm_winner': m_winner_list,
+    'num_elections': num_elections_list
 })
 
 # Save the new DataFrame to a CSV file
