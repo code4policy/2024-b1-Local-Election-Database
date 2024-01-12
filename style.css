@@ -92,6 +92,21 @@ h5 {
   line-height: 1; /* Adjust the line height */
 }
 
+/* footer styling */
+footer {
+    background-color: #F5F3EF; /* Set your desired background color */
+    padding: 5px 10px 5px 10px;
+}
+
+.footer-style {
+  font-family: "halyard-display", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 14px; /* Change the font size */
+  color: #000000; /* Change the text color */
+  line-height: 1.5; /* Adjust the line height */
+}
+
 /* heading styling */
 header {
     background-color: #F5F3EF; /* Set your desired background color */
