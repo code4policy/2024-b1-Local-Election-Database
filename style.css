@@ -195,17 +195,28 @@ header {
   cursor: pointer;
   background-color: #fff; /* Header background color */
   border-bottom: 1px solid #ccc;
+  font-family: "halyard-display", sans-serif;
+  font-weight: 300;
+  font-size: 16px; /* Change the font size */
+  color: #333; /* Change the text color */
 }
 
 .accordion-content {
   display: none;
   padding: 10px;
   transition: display 0.3s ease-out;
+  font-family: "halyard-display", sans-serif;
+  font-weight: 300;
+  font-size: 16px; /* Change the font size */
+  color: #333; /* Change the text color */
 }
 
 .accordion-header.open {
-  background-color: #F5F3EF;
-  font-weight: bold; /* or any other style you prefer */
+  background-color: #fff;
+  font-family: "halyard-display", sans-serif;
+  font-weight: 300;
+  font-size: 16px; /* Change the font size */
+  color: #333; /* Change the text color */
 }
 
 /* Styling for Headshot Image Feature */
