@@ -2,18 +2,19 @@
 /* Set body dimensions */
 
 .container {
-  max-width: 800px; /* Adjust the max-width according to your design */
+  max-width: 900px; /* Adjust the max-width according to your design */
   margin: 0 auto; /* Center the container horizontally */
   padding: 20px 20px 20px 20px; /* Optional padding for the container */
 }
 
 main {
-  width: 60%; /* Set the main content width to 60% of the container */
+  width: 70%; /* Set the main content width to 60% of the container */
   margin: 0 auto; /* Center the main content horizontally */
 }
 
 body {
   margin: 0 auto;
+  max-width: 900px;
   align-content: center;
   background-color: #F5F3EF;
   padding: 20px 20px 20px 20px;
@@ -21,6 +22,15 @@ body {
 
 /* Customizing Paragraph Text */
 p {
+  font-family: "halyard-display", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 16px; /* Change the font size */
+  color: #333; /* Change the text color */
+  line-height: 1.5; /* Adjust the line height */
+}
+
+ul {
   font-family: "halyard-display", sans-serif;
   font-weight: 300;
   font-style: normal;
@@ -84,6 +94,7 @@ header {
 }
 
 #logo-image {
+    display: flex;
     height: 80px; /* Adjust the height of your logo as needed */
     width: auto; /* Maintain the aspect ratio while adjusting the height */
     padding-bottom: 30px;
