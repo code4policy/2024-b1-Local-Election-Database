@@ -4,23 +4,27 @@
 <head>
     <title>The Local Elections Database Project</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script src="https://d3js.org/topojson.v3.min.js"></script>
+    <link rel="stylesheet" href="https://use.typekit.net/qnf2gwf.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<nav class="navbar">
-<ul>
-<li><a href="index.html">Home</a></li>
-      <li><a href="#">Explore the Data</a></li>
-      <li><a href="citation-page/index.html">About the Data</a></li>
-      <li><a href="our-team/index.html">About the Team</a></li>
-</ul>
-</nav>
-<body>
+    <div class="container">
+    <header>  
+    <nav>
+<a href="index.html" id="logo-link">
+            <img src="HKSlogo_ash_cmyk.png" alt="Ash Center for Democratic Governance and Innovation" id="logo-image">
+        </a>
+        <ul class="nav-ul">
+            <li class="av-li"><a class="nav-a" href="gender-web-page/index.html">Explore the Data</a></li>
+            <li class="av-li"><a class="nav-a" href="citation-page/index.html">About the Data</a></li>
+            <li class="av-li"><a class="nav-a" href="our-team/index.html">About the Team</a></li>
+        </ul>
+  </nav>
+</header>
     <h1>Welcome to the Local Elections Database Project</h1>
     <h2>
         Just how representative is local government? 
     </h2>
-        <h5><em>New data illustrate how much local elected official demographics mirror their constituencies.</em></h5>
+        <h3>New data illustrate how much local elected official demographics mirror their constituencies.</h3>
         <p>
             Local government operates notoriously close to home. From trash pickup to snow removal and emergency services, you can find local government at almost every street corner. But does a close physical proximity equate to better representation for constituents?
         </p>
@@ -36,33 +40,15 @@
         <p>
             To make these results accessible, the Local Elections Database team of DPI 691-M has visualized the representativeness of various electoral contests. We hope that the people engaged in making their communities more representative will find these displays illustrative and useful. An important part of making our voices heard is for our government to reflect on various lived experiences.
         </p>
-        <p>
-            For more information, you can <a href="https://osf.io/mv5e6/"> explore the dataset</a>. 
+        <p><a href="https://osf.io/mv5e6/" class="blue-btn">Download the Full Local Government Elections Dataset</a></p>
+        <p><a href="gender-web-page/index.html" class="blue-btn">Explore the Data - Gender Representation</a></p>
         </p>
-
-        <p>Here is the link to the American "Local Government Elections Database" that was used for our analysis in this project!</p>
-        <a href="https://osf.io/mv5e6/">Visit Local Government Elections Database website</a>
-
-        <p></p>
-      
-      <h2>US Map (Demo)</h2>
-    <div id="map"></div>
-    <script src="us_map_test.js"></script>
-
-    <div class="accordion-container">
-        <div class="accordion">
-            <div class="accordion-item">
-                <div class="accordion-header" data-title="Data Disclaimer">+ Data Disclaimer</div>
-                <div class="accordion-content">
-                    <p>Unless otherwise separately undertaken by the Licensor, to the extent possible, the Licensor offers the Licensed Material as-is and as-available, and makes no representations or warranties of any kind concerning the Licensed Material, whether express, implied, statutory, or other. This includes, without limitation, warranties of title, merchantability, fitness for a particular purpose, non-infringement, absence of latent or other defects, accuracy, or the presence or absence of errors, whether or not known or discoverable. Where disclaimers of warranties are not allowed in full or in part, this disclaimer may not apply to You.
-
-                To the extent possible, in no event will the Licensor be liable to You on any legal theory (including, without limitation, negligence) or otherwise for any direct, special, indirect, incidental, consequential, punitive, exemplary, or other losses, costs, expenses, or damages arising out of this Public License or use of the Licensed Material, even if the Licensor has been advised of the possibility of such losses, costs, expenses, or damages. Where a limitation of liability is not allowed in full or in part, this limitation may not apply to You.
-
-                The disclaimer of warranties and limitation of liability provided above shall be interpreted in a manner that, to the extent possible, most closely approximates an absolute disclaimer and waiver of all liability.</p>
-                 </div>
-            </div>
+                 <script src="accordion_script.js"></script>
         </div>
-    </div>
-     <script src="script.js"></script>
+         <p></p>
+     </div>
+     <footer>
+        <p class="footer-style">&copy; 2024 The Local Elections Database Project, a student team at the Harvard Kennedy School. All rights reserved.</p>
+    </footer>
 </body>
 </html>
