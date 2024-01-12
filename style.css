@@ -83,6 +83,15 @@ h5 {
   line-height: 1; /* Adjust the line height */
 }
 
+.pronunciation {
+  font-family: "superior-title", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px; /* Change the font size */
+  color: #666666; /* Change the text color */
+  line-height: 1; /* Adjust the line height */
+}
+
 /* heading styling */
 header {
     background-color: #F5F3EF; /* Set your desired background color */
