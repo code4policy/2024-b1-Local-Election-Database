@@ -1,14 +1,90 @@
 <!DOCTYPE html>
+<html lang="en">
 <html>
-    <head>
-        <title>Demo Website</title>
-    </head>
-    <body>
-        <h1>Our Demonstration Website</h1>
-        <p>Here is the link to the American "Local Government Elections Database" that was used for our analysis in this project!</p>
-        <a href="https://osf.io/mv5e6/">Visit Local Government Elections Database website</a>
+<head>
+    <title>The Local Elections Database Project</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/qnf2gwf.css">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="container">
+<header> 
+    <nav>
+<a href="index.html" id="logo-link">
+            <img src="HKSlogo_ash_cmyk.png" alt="Ash Center for Democratic Governance and Innovation" id="logo-image">
+        </a>
+        <ul class="nav-ul">
+  <li class="av-li"><a class="nav-a" href="citation-page/index.html">About the Data</a></li>
+  <li class="av-li"><a class="nav-a" href="our-team/index.html">About the Team</a></li>
+</ul>
+  </nav>
+</header>
+    <h1>Welcome to the Local Elections Database Project</h1>
+    <h2>
+        Just how representative is local government? 
+    </h2>
+        <h3>New data illustrate how much local elected official demographics mirror their constituencies.</h3>
+        <p>
+            Local government operates notoriously close to home. From trash pickup to snow removal and emergency services, you can find local government at almost every street corner. But does a close physical proximity equate to better representation for constituents?
+        </p>
+        <p>
+            The U.S. Congress is notoriously <a href="https://www.pewresearch.org/short-reads/2023/02/07/the-changing-face-of-congress/"> out of step with the American population</a>. Women comprise only 28% of Congress while women are more than half of the U.S. population (51%). Representation is also elusive for people of color, young people, and members of the LGBTQ+ community. 
+        </p>
+        <p>
+            Historically, it has been difficult to analyze trends in 
+            descriptive representation at the local level.
 
-        <p></p>
-        <p><a href='our-team/index.html'>Learn more about our team</a></p>
-    </body>
+            Sparse data existed on local elections and officials like mayors, city councilors, sheriffs, and school board members. However, in 2022, Justin de Benedictis-Kessner (Harvard Kennedy School), Diana Da In Lee (Columbia University), Yamil Velez (Columbia University), and Christopher Warshaw (Georgia Washington University) released a new, comprehensive database of about 78,000 candidates in 57,500 local electoral contests between 1989-2021. The novel dataset contains information on candidates, election results, and key demographics, including race and gender. Read more about the work in <a href="https://dash.harvard.edu/bitstream/handle/1/37373139/RWP22_013_deBenedictisKessner_v2.pdf?sequence=1&isAllowed=y">this paper</a>. 
+        </p>
+        <p>
+            To make these results accessible, the Local Elections Database team of DPI 691-M has visualized the representativeness of various electoral contests. We hope that the people engaged in making their communities more representative will find these displays illustrative and useful. An important part of making our voices heard is for our government to reflect on various lived experiences.
+        </p>
+        <p><a href="https://osf.io/mv5e6/" class="blue-btn">Download the Full Local Government Elections Dataset</a></p>
+        </p>
+
+    <h2> 
+        Local Representation at a Glance
+    </h2>
+    <p>
+        The American Local Government Elections Database can illustrate revealing patterns about the descriptive representation of various groups in local offices. 
+    </p>
+    <p>
+        For example, women remain under-represented in the majority of local offices. In city council elections, women won less than 37.5% of all available seats, despite women on average representing 50% or more of the population. In effect, women were 40% less likely than men to win a city council election in 2020. And that represents an <em>improvement</em> over historical trends: in 2004, women won less than 31% of all available seats.
+    </p>
+    <p>
+        An important caveat: the universe of the dataset is not fully comprehensive. First, the databse only catalogs cities, counties, and school districts with a population of at least 50,000 in 2020. And some elections have data the authors could not locate. These could exist for smaller geographic units or elections that public datasets did not reveal.  
+    </p>
+    <p>
+        However, in medium and larger-sized communities, <b>the message is clear: all across the country, women do not have the same representation as men.</b> The visualizations we present will offer some insights into where under-representation is happening the most, so that advocates can determine what to do about it.
+    </p>
+
+<h2>Top 10 Most Underrepresented Counties in Female Representation</h2>
+<table id="countiesTable">
+    <tr>
+        <th>County</th>
+        <th>Female Representation (%)</th>
+    </tr>
+    <!-- Table rows will be inserted here -->
+</table>
+
+
+      <h2>US Map (Demo)</h2>
+        <div class="content-wrapper">
+            <div class="tooltip" style="opacity: 0;"></div>
+                <div id="map"></div>
+           <script type="module" src="us_county_map_test.js"></script>
+                 <script src="accordion_script.js"></script>
+        </div>
+         <p></p>
+     </div>
+     <!-- Add this just before the closing </body> tag -->
+<script>
+    const csvData = `fips,geoname,num_M,num_F,...`;
+    // ... (rest of the JavaScript code)
+</script>
+
+</body>
 </html>
