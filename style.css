@@ -448,3 +448,11 @@ nav {
 #map-legend_chi rect {
     pointer-events: all;
 }
+
+/* Creating an option for a thin border feature box*/
+.thin-box {
+  --border-color: #CC0033; 
+  border: 1px solid var(--border-color);
+  padding: 40px;
+  display: inline-block;
+}
