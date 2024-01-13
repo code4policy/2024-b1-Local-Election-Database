@@ -25,58 +25,71 @@ p {
   font-family: "halyard-display", sans-serif;
   font-weight: 300;
   font-style: normal;
-  font-size: 16px; 
+  font-size: 18px; 
   color: #333; 
-  line-height: 1.5; 
+  line-height: 28.5px; 
+  letter-spacing: .6px;
 }
 
 b {
   font-family: "halyard-display", sans-serif;
   font-weight: 500;
-  font-style: normal;
-  font-size: 16px; 
+  font-style: bold;
+  font-size: 18px; 
   color: #333; 
-  line-height: 1.5; 
+  line-height: 28.5px; 
+  letter-spacing: .6px;  
 }
 
 i {
   font-family: "halyard-display", sans-serif;
   font-weight: 200;
   font-style: italic;
-  font-size: 16px; 
+  font-size: 18px; 
   color: #333; 
-  line-height: 1.5; 
+  line-height: 28.5px; 
+  letter-spacing: .6px; 
 }
 
 em {
   font-family: "halyard-display", sans-serif;
   font-weight: 200;
   font-style: italic;
-  font-size: 16px; 
+  font-size: 18px; 
   color: #333; 
-  line-height: 1.5; 
+  lline-height: 28.5px; 
+  letter-spacing: .6px; 
 }
 
 ul {
   font-family: "halyard-display", sans-serif;
   font-weight: 300;
   font-style: normal;
-  font-size: 16px; /* Change the font size */
-  color: #333; /* Change the text color */
-  line-height: 1.5; /* Adjust the line height */
+  font-size: 18px; 
+  color: #333; 
+  line-height: 28.5px; 
+  letter-spacing: .6px;
 }
 
 ol {
   font-family: "halyard-display", sans-serif;
   font-weight: 300;
   font-style: normal;
-  font-size: 16px; /* Change the font size */
-  color: #333; /* Change the text color */
-  line-height: 1.5; /* Adjust the line height */
+  font-size: 18px; 
+  color: #333; 
+  line-height: 28.5px; 
+  letter-spacing: .6px;
 }
 
 a {
   color: royalblue;
+  font-family: "halyard-display", sans-serif;
+  font-weight: 400;
+  font-style: bold;
+  font-size: 18px; 
+  line-height: 28.5px; 
+  letter-spacing: .6px;
+
 }
 
 h1 {
@@ -145,6 +158,9 @@ footer {
 
 /* heading styling */
 header {
+    margin: 0 auto;
+    max-width: 900px;
+    align-content: center;
     background-color: #F5F3EF; /* Set your desired background color */
     padding: 10px 10px 10px 10px;
 }
