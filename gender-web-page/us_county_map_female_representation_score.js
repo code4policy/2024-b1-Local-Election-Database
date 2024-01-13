@@ -19,7 +19,7 @@ const path = d3.geoPath()
 // Create a tooltip
 const tooltipOffsetX = 10; // Adjust as needed for your layout
 const tooltipOffsetY = 10; // Adjust as needed for your layout
-const tooltip = d3.select(".tooltip")
+const tooltip = d3.select(".tooltip_score")
     .style("opacity", 0);
 
 // Define a color scale
@@ -189,36 +189,36 @@ d3.json("us-states.json").then(function(statesData) {
 });
 
 // Create a legend
-const legend = svg.append("g")
-    .attr("class", "legend")
-    .attr("id", "map-legend") // Unique ID for the legend
-    .attr("transform", `translate(${width - 50}, 50)`);
+    const legend = svg.append("g")
+        .attr("class", "legend")
+        .attr("id", "map-legend_score") // Unique ID for the legend
+        .attr("transform", `translate(${width - 50}, 50)`);
 
 
-const legendItemSize = 20; // Height of each legend item
-const legendSpacing = 2; // Spacing between legend items
+    const legendItemSize = 20; // Height of each legend item
+    const legendSpacing = 2; // Spacing between legend items
 
-color.range().forEach((d, i) => {
-    legend.append("rect")
-        .attr("x", 0)
-        .attr("y", i * (legendItemSize + legendSpacing))
-        .attr("width", legendItemSize)
-        .attr("height", legendItemSize)
-        .style("fill", d)
-        .style("stroke", "white") // Set the stroke color to white
-        .style("stroke-width", "1px"); // Set the stroke width. Adjust as needed.
-});
+    color.range().forEach((d, i) => {
+        legend.append("rect")
+            .attr("x", 0)
+            .attr("y", i * (legendItemSize + legendSpacing))
+            .attr("width", legendItemSize)
+            .attr("height", legendItemSize)
+            .style("fill", d)
+            .style("stroke", "white") // Set the stroke color to white
+            .style("stroke-width", "1px"); // Set the stroke width. Adjust as needed.
+    });
 
-const legendDomain = color.domain();
-legend.selectAll('text')
-    .data(legendDomain)
-    .enter().append('text')
-    .attr("x", legendItemSize + legendSpacing)
-    .attr("y", (d, i) => i * (legendItemSize + legendSpacing) + (legendItemSize / 2))
-    .text(d => d)
-    .style("alignment-baseline", "middle");
+    const legendDomain = color.domain();
+    legend.selectAll('text')
+        .data(legendDomain)
+        .enter().append('text')
+        .attr("x", legendItemSize + legendSpacing)
+        .attr("y", (d, i) => i * (legendItemSize + legendSpacing) + (legendItemSize / 2))
+        .text(d => d)
+        .style("alignment-baseline", "middle");
 
-// Move the number 8 physically below the bottom, darkest orange box
+    // Move the number 10 physically below the bottom, darkest orange box
     legend.selectAll('text')
         .filter(d => d === 8)
         .attr("x", legendItemSize + legendSpacing)

@@ -19,7 +19,7 @@ const path = d3.geoPath()
 // Create a tooltip
 const tooltipOffsetX = 10; // Adjust as needed for your layout
 const tooltipOffsetY = 10; // Adjust as needed for your layout
-const tooltip = d3.select(".tooltip2")
+const tooltip = d3.select(".tooltip_chi")
     .style("opacity", 0);
 
 // Define a color scale for gender representation
@@ -194,7 +194,7 @@ d3.json("us-states.json").then(function(statesData) {
 // Create a legend
 const legend = svg.append("g")
     .attr("class", "legend")
-    .attr("id", "map-legend") // Unique ID for the legend
+    .attr("id", "map-legend_chi") // Unique ID for the legend
     .attr("transform", `translate(${width - 400}, 50)`);
 
 
