@@ -294,12 +294,17 @@ nav {
     margin: 0 auto;
 }
 
-#map {
+#map_chi {
     position: relative; /* This makes it a reference for absolute children positioning */
 }
 
+#map_score {
+    position: relative; /* This makes it a reference for absolute children positioning */
+}
+
+
 /* Style for the tooltip */
-.tooltip {
+.tooltip, .tooltip2 {
     position: absolute;
     text-align: center;
     padding: 6px;
