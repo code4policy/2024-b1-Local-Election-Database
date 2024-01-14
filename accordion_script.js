@@ -1,17 +1,25 @@
-// maptoggle.js
+document.addEventListener('DOMContentLoaded', function () {
+    // Accordion feature motion
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
 
-function toggleMap(option) {
-  // Your implementation for toggling maps based on the option
-  if (option === 'score') {
-    // Toggle the map for 'score'
-    document.getElementById('map_score').style.display = 'block';
-    document.getElementById('map_chi').style.display = 'none';
-  } else if (option === 'chi') {
-    // Toggle the map for 'chi'
-    document.getElementById('map_score').style.display = 'none';
-    document.getElementById('map_chi').style.display = 'block';
-  }
-}
+    accordionHeaders.forEach(header => {
+        const accordionItem = header.parentElement;
+        const accordionContent = accordionItem.querySelector('.accordion-content');
 
+        if (accordionContent) {
+            // Hide the content initially
+            accordionContent.style.display = 'none';
+
+            // Toggle the display of the content and change the icon on click
+            header.addEventListener('click', function () {
+                accordionContent.style.display = accordionContent.style.display === 'none' ? 'block' : 'none';
+                this.classList.toggle('open');
+
+                // Change the text content based on the open/closed state
+                this.innerText = this.classList.contains('open') ? '- ' + header.getAttribute('data-title') : '+ ' + header.getAttribute('data-title');
+            });
+        }
+    });
+});
 
 
