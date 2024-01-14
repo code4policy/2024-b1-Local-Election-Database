@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>The Local Elections Database Project</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/qnf2gwf.css">
+    <script src="maptoggle.js" defer></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="container">
+<header> 
+    <nav>
+<a href="../index.html" id="logo-link">
+            <img src="https://code4policy.com/2024-b1-Local-Election-Database/HKSlogo_ash_cmyk.png" alt="Ash Center for Democratic Governance and Innovation" alt="Ash Center for Democratic Governance and Innovation" id="logo-image">
+        </a>
+    <ul class="nav-ul">
+    <li class="av-li"><a class="nav-a" href="index.html">Explore the Data</a>
+    <ul class="sub-menu">
+        <li>
+            <a href="/index.html">BY GENDER</a>
+        </li>
+    </ul>
+  </li>
+  <li class="av-li"><a class="nav-a" href="//2024-b1-Local-Election-Database/citation-page/index.html">About the Data</a></li>
+  <li class="av-li"><a class="nav-a" href="/2024-b1-Local-Election-Database//our-team/index.html">About the Team</a></li>
+</ul>
+  </nav>
+</header>
+<div class="textcontainer">
+    <h1>Are women well represented in local offices?</h1>
+    <h2>A Numbers Breakdown</h2>
+    <p>Women remain under-represented in the majority of local offices. According to the Local Elections Database:<ul>
+        <li>In city council elections, women won less than 37.5% of all available seats, despite women on average representing 50% or more of the population.</li>
+        <li>In effect, women were 40% less likely than men to win a city council election in 2020.</li>
+        <li>And that represents an <em>improvement</em> over historical trends: in 2004, women won less than 31% of all available seats.</li></ul>
+    </p>
+    <p>
+        <b>An important caveat:</b> the universe of the <a href="citation-page/index.html">dataset</a> is not fully comprehensive. First, the databse only catalogs cities, counties, and school districts with a population of at least 50,000 in 2020. And some elections have data the authors could not locate. These could exist for smaller geographic units or elections that public datasets did not reveal.  
+    </p>
+    <p>
+        However, in the medium and larger-sized communities that the dataset encompasses, <b>the message is clear: all across the country, women do not have the same representation as men.</b> The following visualizations offer some insights into where female under-representation is happening the most.
+    </p>
+      <h2>Historically, do women serve as county executive?</h2> 
+      <h4> I want to just look for my county </h4>
+      <p> You can search through all available counties to see per-county results:<p>
+        <title>Searchable Table</title>
+</head>
+<body>
+    <label for="geonameDropdown">Select County Name:</label>
+            <select id="geonameDropdown"></select>
+
+            <table id="countiesTable">
+        <!-- Table content will be dynamically added here -->
+            </table>
+<script src="populateTable.js"></script>
+<h4> I want to see the country as a whole </h4>
+      <p> You can change between two types of maps, a version that shows you our overall score for representation and another that breaks down the statistics:<p>
+
+<div class="content-wrapper">
+    <label for="mapToggle"></label>
+    <select id="mapToggle" onchange="toggleMap()">
+        <option value="score">Simple Representation Index</option>
+        <option value="chi">Chi-Squared Test</option>
+    </select>
+</div>
+<div class="content-wrapper">
+    <div id="map_score" style="display: none;">
+        <div class="toggle-content">
+            <h2>Are women represented in the office as county executive?
+            <h3>Judging on a scale from 1-10, 60% of the county gets a 0 for female representation in the office of county executive.</h3>
+            <p>The Local Elections Database holds the results of county executive elections for 126 counties (out of 3,143) in the US. Here, we visualized the counties by the female gender representation. The color is assigned by a simple gender representation score given by the ratio of female county executives within the available data, scaled to a 10-point scale and rounded to the nearest whole number, where a 0 means that no women have been elected, a 5 indicated gender parity and a 10 overrepresentation of women. In sum, the data show nearly 60% of the county gets a 0 for female representation. </p>
+            <p> <em> Data for this map was taken from the American Local Government Elections Database available at osf.io/mv5e6, </em> </p>
+        </div>
+        <div class="tooltip_score" style="opacity: 0;"></div>
+        <div id="map-legend_score"></div>
+        <div id="mapText_score"></div>
+    </div>
+</div>
+
+<div class="content-wrapper">
+    <div id="map_chi" style="display: none;">
+        <div class="toggle-content">
+            <h2>Are women represented in the office as county executive?</h2>
+            <h3>If we use a traditional statistics test we find 47% of the counties exhibit a gender bias in their election results.</h3>
+            <p>In this visualization, we have presented the counties according to the outcomes of the Chi-squared test, which was conducted under the assumption of a 1:1 gender distribution with a significance level of p < 0.05. The analysis reveals that approximately <b>47% of the counties exhibit a gender bias in their election results</b>. This significant finding underscores the urgent need for enhanced gender representation in regional political landscapes, calling attention to the disparities that currently exist.
+            </p>
+            <p> <em> Data for this map was taken from the American Local Government Elections Database available at osf.io/mv5e6, </em> </p>
+        </div>
+        <div class="tooltip_chi" style="opacity: 0;"></div>
+        <div id="mapText_chi"></div>
+    </div>
+</div>
+            <script type="module" src="us_county_map_female_representation_score.js"></script>
+    <br><br>
+           <script type="module" src="us_county_map_chi_test.js"></script>
+        </div>
+
+
+    <div class="textcontainer">
+        <div class="thin-box">
+    <h2>Missing Data?</h2>
+         <p>Do you have a correction to the data we presented or information about a local election in the United States that we have not displayed? Please <a href="https://docs.google.com/forms/d/e/1FAIpQLSfQeNHF4PSdkv3uLnAuC6rcOehcgfPIXMfbn5u7aFt1f_0oXA/viewform?usp=sf_link">fill out our feedback form</a>! You may also <a href="https://docs.google.com/forms/d/e/1FAIpQLSfQeNHF4PSdkv3uLnAuC6rcOehcgfPIXMfbn5u7aFt1f_0oXA/viewform?usp=sf_link">leave your contact information</a> if you would like to discuss the project further.
+         </p></div>
+     </div>
+     <div class="textcontainer">
+        <h2>Where can I learn more about this project?
+        <p>
+            We owe our original source data to the American Local Government Elections Database. If you would like to learn more about that database, you can access it online.
+        </p>
+        <p><a href="https://osf.io/mv5e6/" class="blue-btn">Visit the American Local Government Elections Database</a></p>
+        <p>
+            <a href='our-team/index.html'>Our team</a> has compiled information about our project and our use of the American Local Government Elections Database in the "<a href="citation-page/index.html">About the Data</a> tab of this website. 
+        </p>
+        <p><a href="https://osf.io/mv5e6/" class="blue-btn">About the Data</a></p>
+        <p><a href="our-team/index.html" class="blue-btn">About the Team</a></p>
+        <p> 
+            Would you like to learn more about how we analyzed the data? You can <a href="https://github.com/code4policy/2024-b1-Local-Election-Database">check out our team's page on GitHub for that information</a>.
+        </p>
+        <p><a href="https://github.com/code4policy/2024-b1-Local-Election-Database" class="blue-btn">Access Our Project Data and Documentation</a></p>
+        <p>
+            Finally, if you would like to access the data we used directly, you can 
+                <a href='https://codeload.github.com/code4policy/2024-b1-Local-Election-Database/zip/refs/heads/main'>download the files</a>.        
+        </p>
+        <p><button class="blue-btn" id="downloadButton">Download Files</button></p>
+        <script src="downloadbutton.js"></script>
+ </div>
+</body>
+    <footer>
+        <p>&copy; 2024 The Local Elections Database Project, a student team at the Harvard Kennedy School. All rights reserved.</p>
+    </footer>
+</html>
