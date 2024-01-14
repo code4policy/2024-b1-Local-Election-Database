@@ -462,60 +462,10 @@ nav {
 }
 
 /* Creating the toggle option */
-.toggle-option {
-    display: flex;
-    align-items: center;
-    margin-right: 20px; /* Adjust as needed for spacing */
-    cursor: pointer;
-}
-
-.toggle-option input {
-    display: none; /* Hide the default radio button */
-}
-
-.toggle-option label {
-    position: relative;
-    padding-left: 24px; /* Adjust as needed for spacing between circle and text */
-    cursor: pointer;
-}
-
-.toggle-option label::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 16px; /* Adjust the width of the circle */
-    height: 16px; /* Adjust the height of the circle */
-    border-radius: 50%;
-    border: 2px solid #CC0033; /* Set the border color */
-    background-color: white; /* Set the initial background color to white */
-}
-
-/* Style the checked state */
-.toggle-option input:checked + label::before {
-    background-color: #CC0033; /* Change background color when checked */
-}
-
-/* Style the radio button appearance */
-.toggle-option input[type="radio"] {
-    appearance: none;
-}
-
-.toggle-option input[type="radio"] + label::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 16px; /* Adjust the width of the circle */
-    height: 16px; /* Adjust the height of the circle */
-    border-radius: 50%;
-    border: 2px solid #CC0033; /* Set the border color */
-    background-color: white; /* Set the initial background color to white */
-}
-
-/* Style the checked state for radio buttons */
-.toggle-option input[type="radio"]:checked + label::before {
-    background-color: #CC0033; /* Change background color when checked */
+/* Style for the dropdown */
+.content-wrapper select {
+    padding: 10px;
+    font-size: 16px;
 }
 
 table {
