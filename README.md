@@ -1,9 +1,30 @@
 # b1-Local-Election-Database
 
-Welcome to the GitHub repository for the Local Elections Database group. 
+## Introduction
 
-You can view our website online here: https://code4policy.com/2024-b1-Local-Election-Database/ 
+Welcome to the GitHub repository for the Local Elections Database group! This team was brought together in January 2024 by Programming and Data for Policymakers, a course at the Harvard Kennedy School. Professors [Dhrumil Mehta] (https://dhrumilmehta.com) and [Aarushi Sahejpal] (https://aarushisahejpal.com) tasked us with using our new skills in programming to create a useful, helpful website. You can [view our website online here] (https://code4policy.com/2024-b1-Local-Election-Database/index.html).
 
-This project is a part of DPI 691MB: Programming and Data for Policymakers at Harvard Kennedy School. 
+With a shared background in public service and passion for democracy and representation, we decided to bring the ground-breaking [American Local Government Elections Database] (https://osf.io/mv5e6/) to life. Prior to this project, the database existed as a working paper and a set of spreadsheets. We decided to visualize and reformat these data to help answer the question: do local governments in the U.S. represent everyone?
 
-Team members include Brandon Martinez, Kazi Ahmed, Kimihiro Nakamura, and Sarah Grucza.
+Team members include Brandon Martinez, Kazi Ahmed, Kimihiro Nakamura, and Sarah Grucza. You can [learn more about our team here] (https://code4policy.com/2024-b1-Local-Election-Database/index.html).
+
+## Replicating the Score Visualizations
+
+The maps that display representation on a 10-point scale (e.g. "Heading of Scoring Map on gender-web-page") are for activists and organization leaders that would like a ready-made heuristic for governmental entities that represent social groups like women less than their share of the population. By applying a scalar rating system to the degree of descriptive representation in a community, we aim to give these users a clear way to identify communities that are similar to each other, as well as others that are markedly unrepresentative.
+
+To recreate the data we utilized, take the following steps: 
+
+1. Download ledb_candidadatelevel.csv. This file contains original data from the [American Local Government Elections Database] (https://osf.io/mv5e6/).
+
+2. Run the program county-executive-map-data.py on your device. This program uses the FIPS code to create a dataframe of aggregated elections by county with the number of men and women who ran for office, the number that won, and the total number of seats available. 
+
+3. The program also creates the file county-executive-map-data.csv, a version of which you can download directly from our GitHub repository.
+
+4. The program also merges the data with a file with data on the proportion of women per county. That file, counties_constituency_data1.csv, is another original dataset from the [American Local Government Elections Database] (https://osf.io/mv5e6/), and it is also available for download from this repository.
+
+5. Finally, the program also creates a representation variable that is the number of female winners over the percent of women in the population. We transformed this value into a representation score by multiplying each value (which was in the range {0,2}) by 5. 
+
+
+## Credits
+
+For more information about the original dataset, our modifications, and citations to this project, please visit the citations page of our website: https://code4policy.com/2024-b1-Local-Election-Database/citation-page/index.html. 
