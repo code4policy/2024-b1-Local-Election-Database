@@ -79,7 +79,7 @@ async function drawMap() {
         const data = await d3.csv("chi_square_results_with_female_representation_score_by_fips.csv").catch(error => {
             throw new Error(`Error loading CSV file: ${error.message}`);
         });
-console.log('No data found for', data);
+//console.log('No data found for', data);
         // Convert data to a map for easy lookup
         const dataMap = new Map(data.map(row => {
             // Parse the Years field from a string to an array, handling potential single quotes
@@ -98,7 +98,7 @@ console.log('No data found for', data);
             }];
         }));
 
-        console.log('No data found for', dataMap);
+        // console.log('No data found for', dataMap);
 
         // Load the GeoJSON data
         const us = await d3.json("us-counties.json").catch(error => {
@@ -214,7 +214,12 @@ d3.json("us-states.json").then(function(statesData) {
         .data(legendDomain)
         .enter().append('text')
         .attr("x", legendItemSize + legendSpacing)
-        .attr("y", (d, i) => i * (legendItemSize + legendSpacing) + (legendItemSize / 2))
+        .attr("y", function(d, i) { 
+            console.log("test ", d, i);
+            return i * (legendItemSize + legendSpacing) +  i * 175
+
+            }
+            )
         .text(d => d)
         .style("alignment-baseline", "middle");
 

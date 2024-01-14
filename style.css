@@ -1,10 +1,17 @@
-
 /* Set body dimensions */
 
 .container {
   max-width: 900px; /* Adjust the max-width according to your design */
   margin: 0 auto; /* Center the container horizontally */
   padding: 20px 20px 20px 20px; /* Optional padding for the container */
+}
+
+/* Customizing to width and padding of the main page (non-header) content */
+.textcontainer,
+.toggle-content {
+  max-width: 700px; /* Adjust the max-width according to your design */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 0px 20px 20px 20px; /* Optional padding for the container */
 }
 
 main {
@@ -25,9 +32,36 @@ p {
   font-family: "halyard-display", sans-serif;
   font-weight: 300;
   font-style: normal;
-  font-size: 16px; /* Change the font size */
-  color: #333; /* Change the text color */
-  line-height: 1.5; /* Adjust the line height */
+  font-size: 17px; 
+  color: #333; 
+  line-height: 28.5px; 
+}
+
+b {
+  font-family: "halyard-display", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px; 
+  color: #333; 
+  line-height: 1.5; 
+}
+
+i {
+  font-family: "halyard-display", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+  font-size: 16px; 
+  color: #333; 
+  line-height: 1.5; 
+}
+
+em {
+  font-family: "halyard-display", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+  font-size: 16px; 
+  color: #333; 
+  line-height: 1.5; 
 }
 
 ul {
@@ -56,7 +90,7 @@ h1 {
   font-family: "superior-title", serif;
   font-weight: 700;
   font-style: normal;
-  font-size: 35px; /* Change the font size */
+  font-size: 30px; /* Change the font size */
   color: #333; /* Change the text color */
   margin-top: 0.5em; /* Adjust the space above the text */
 }
@@ -118,8 +152,11 @@ footer {
 
 /* heading styling */
 header {
+    margin: 0 auto;
+    max-width: 900px;
+    align-content: center;
     background-color: #F5F3EF; /* Set your desired background color */
-    padding: 10px 10px 10px 10px;
+    padding: 10px 10px 0px 10px;
 }
 
 #logo-link {
@@ -322,10 +359,13 @@ nav {
 
 .content-wrapper {
     display: flex;
+    max-width: 700px; /* Adjust the max-width according to your design */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 0px 20px 20px 20px; /* Optional padding for the container */
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center; /* For centering any text content */
+    text-align: left; /* For centering any text content */
     margin: 0 auto;
 }
 
@@ -411,4 +451,39 @@ nav {
 #map-legend_chi text,
 #map-legend_chi rect {
     pointer-events: all;
+}
+
+/* Creating an option for a thin border feature box*/
+.thin-box {
+  --border-color: #CC0033; 
+  border: 1px solid var(--border-color);
+  padding: 40px;
+  display: inline-block;
+}
+
+/* Style for the dropdown */
+.content-wrapper select {
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* Style for the copy button */
+.content-wrapper button {
+    margin-top: 10px; /* Adjust as needed for spacing */
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
 }
