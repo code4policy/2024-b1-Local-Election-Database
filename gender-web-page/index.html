@@ -45,23 +45,19 @@
     </p>
 
       <h2>Historically, do women serve as county executive?</h2> 
+      <p> You can change between two types of maps, a version that shows you our overall score for representation and another that breaks down the statistics:<p>
 
 <div class="content-wrapper">
-    <button id="scoreOption" class="toggle-option">
-        <input type="radio" name="mapToggle" checked>
-        <span>On a Scale from 1-10</span>
-    </button>
-
-    <button id="chiOption" class="toggle-option">
-        <input type="radio" name="mapToggle">
-        <span>Give me the Chi-squared test</span>
-    </button>
+    <label for="mapToggle"></label>
+    <select id="mapToggle" onchange="toggleMap()">
+        <option value="score">Simple Representation Index</option>
+        <option value="chi">Chi-Squared Test</option>
+    </select>
 </div>
-
 <div class="content-wrapper">
     <div id="map_score" style="display: none;">
         <div class="toggle-content">
-            <h2>Let's answer that question on a scale from 1-10</h2>
+            <h2>Let's answer that question on a scale from 1-10.</h2>
             <p>The Local Elections Database holds the results of county executive elections for 126 counties (out of 3,143) in the US. Here, we visualized the counties by the female gender representation. The color is assigned by a simple gender representation score given by the ratio of female county executives within the available data, scaled to a 10-point scale and rounded to the nearest whole number. Where a 0 means that no women have been elected, a 5 indicated gender parity and a 10 overrepresentation of women. In summ, the data show nearly <b>60% of the county gets a 0 for female representation</b>. </p>
         </div>
         <div class="tooltip_score" style="opacity: 0;"></div>
@@ -73,7 +69,7 @@
 <div class="content-wrapper">
     <div id="map_chi" style="display: none;">
         <div class="toggle-content">
-            <h2>Okay, but what does that mean statistically?</h2>
+            <h2>Let's talk statistics.</h2>
             <p>In this visualization, we have presented the counties according to the outcomes of the Chi-squared test, which was conducted under the assumption of a 1:1 gender distribution with a significance level of p < 0.05. The analysis reveals that approximately 47% of the counties exhibit a gender bias in their election results. This significant finding underscores the urgent need for enhanced gender representation in regional political landscapes, calling attention to the disparities that currently exist.
             </p>
         </div>
@@ -87,8 +83,7 @@
         </div><br><br><br>
         <div class="thin-box">
     <h2>Missing Data?</h2>
-         <p>
-             Do you have a correction to the data we presented or information about a local election in the United States that we have not displayed? Please <a href="https://docs.google.com/forms/d/e/1FAIpQLSfQeNHF4PSdkv3uLnAuC6rcOehcgfPIXMfbn5u7aFt1f_0oXA/viewform?usp=sf_link">fill out our feedback form</a>! You may also <a href="https://docs.google.com/forms/d/e/1FAIpQLSfQeNHF4PSdkv3uLnAuC6rcOehcgfPIXMfbn5u7aFt1f_0oXA/viewform?usp=sf_link">leave your contact information</a> if you would like to discuss the project further.
+         <p>Do you have a correction to the data we presented or information about a local election in the United States that we have not displayed? Please <a href="https://docs.google.com/forms/d/e/1FAIpQLSfQeNHF4PSdkv3uLnAuC6rcOehcgfPIXMfbn5u7aFt1f_0oXA/viewform?usp=sf_link">fill out our feedback form</a>! You may also <a href="https://docs.google.com/forms/d/e/1FAIpQLSfQeNHF4PSdkv3uLnAuC6rcOehcgfPIXMfbn5u7aFt1f_0oXA/viewform?usp=sf_link">leave your contact information</a> if you would like to discuss the project further.
          </p></div>
      </div>
  </div>
