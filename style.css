@@ -421,7 +421,7 @@ nav {
 
 
 /* Style for the tooltip */
-.tooltip_score, .tooltip_chi {
+.tooltip_score, .tooltip_chi, .tooltip_score_legislature, .tooltip_chi_legislature {
     position: absolute;
     text-align: center;
     padding: 6px;
@@ -433,7 +433,7 @@ nav {
     opacity: 1; 
 }
 
-#map-legend_score, #map-legend_chi {
+#map-legend_score, #map-legend_chi, #map-legend_score_legislature, #map-legend_chi_legislature {
     position: absolute;
     top: 15px;  /* Adjust as needed */
     right: 15px; /* Adjust as needed, or change to left if you prefer */
@@ -444,6 +444,24 @@ nav {
 /* Ensure the text and rects inside the legend are interactive for mouse events */
 #map-legend_score text,
 #map-legend_score rect {
+    pointer-events: all;
+}
+
+/* Ensure the text and rects inside the legend are interactive for mouse events */
+#map-legend_chi text,
+#map-legend_chi rect {
+    pointer-events: all;
+}
+
+/* Ensure the text and rects inside the legend are interactive for mouse events */
+#map-legend_score_legislature text,
+#map-legend_score_legislature rect {
+    pointer-events: all;
+}
+
+/* Ensure the text and rects inside the legend are interactive for mouse events */
+#map-legend_chi_legislature text,
+#map-legend_chi_legislature rect {
     pointer-events: all;
 }
 
