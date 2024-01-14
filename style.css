@@ -1,10 +1,17 @@
-
 /* Set body dimensions */
 
 .container {
   max-width: 900px; /* Adjust the max-width according to your design */
   margin: 0 auto; /* Center the container horizontally */
   padding: 20px 20px 20px 20px; /* Optional padding for the container */
+}
+
+/* Customizing to width and padding of the main page (non-header) content */
+.textcontainer,
+.toggle-content {
+  max-width: 700px; /* Adjust the max-width according to your design */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 0px 20px 20px 20px; /* Optional padding for the container */
 }
 
 main {
@@ -25,9 +32,36 @@ p {
   font-family: "halyard-display", sans-serif;
   font-weight: 300;
   font-style: normal;
-  font-size: 16px; /* Change the font size */
-  color: #333; /* Change the text color */
-  line-height: 1.5; /* Adjust the line height */
+  font-size: 17px; 
+  color: #333; 
+  line-height: 28.5px; 
+}
+
+b {
+  font-family: "halyard-display", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px; 
+  color: #333; 
+  line-height: 1.5; 
+}
+
+i {
+  font-family: "halyard-display", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+  font-size: 16px; 
+  color: #333; 
+  line-height: 1.5; 
+}
+
+em {
+  font-family: "halyard-display", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+  font-size: 16px; 
+  color: #333; 
+  line-height: 1.5; 
 }
 
 ul {
@@ -56,7 +90,7 @@ h1 {
   font-family: "superior-title", serif;
   font-weight: 700;
   font-style: normal;
-  font-size: 35px; /* Change the font size */
+  font-size: 30px; /* Change the font size */
   color: #333; /* Change the text color */
   margin-top: 0.5em; /* Adjust the space above the text */
 }
@@ -118,8 +152,11 @@ footer {
 
 /* heading styling */
 header {
+    margin: 0 auto;
+    max-width: 900px;
+    align-content: center;
     background-color: #F5F3EF; /* Set your desired background color */
-    padding: 10px 10px 10px 10px;
+    padding: 10px 10px 0px 10px;
 }
 
 #logo-link {
@@ -322,10 +359,13 @@ nav {
 
 .content-wrapper {
     display: flex;
+    max-width: 700px; /* Adjust the max-width according to your design */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 0px 20px 20px 20px; /* Optional padding for the container */
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center; /* For centering any text content */
+    text-align: left; /* For centering any text content */
     margin: 0 auto;
 }
 
@@ -411,4 +451,69 @@ nav {
 #map-legend_chi text,
 #map-legend_chi rect {
     pointer-events: all;
+}
+
+/* Creating an option for a thin border feature box*/
+.thin-box {
+  --border-color: #CC0033; 
+  border: 1px solid var(--border-color);
+  padding: 40px;
+  display: inline-block;
+}
+
+/* Creating the toggle option */
+.toggle-option {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Adjust as needed for spacing */
+    cursor: pointer;
+}
+
+.toggle-option input {
+    display: none; /* Hide the default radio button */
+}
+
+.toggle-option label {
+    position: relative;
+    padding-left: 24px; /* Adjust as needed for spacing between circle and text */
+    cursor: pointer;
+}
+
+.toggle-option label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 16px; /* Adjust the width of the circle */
+    height: 16px; /* Adjust the height of the circle */
+    border-radius: 50%;
+    border: 2px solid #CC0033; /* Set the border color */
+    background-color: white; /* Set the initial background color to white */
+}
+
+/* Style the checked state */
+.toggle-option input:checked + label::before {
+    background-color: #CC0033; /* Change background color when checked */
+}
+
+/* Style the radio button appearance */
+.toggle-option input[type="radio"] {
+    appearance: none;
+}
+
+.toggle-option input[type="radio"] + label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 16px; /* Adjust the width of the circle */
+    height: 16px; /* Adjust the height of the circle */
+    border-radius: 50%;
+    border: 2px solid #CC0033; /* Set the border color */
+    background-color: white; /* Set the initial background color to white */
+}
+
+/* Style the checked state for radio buttons */
+.toggle-option input[type="radio"]:checked + label::before {
+    background-color: #CC0033; /* Change background color when checked */
 }
