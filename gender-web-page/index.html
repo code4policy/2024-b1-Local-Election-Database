@@ -43,17 +43,20 @@
     <p>
         However, in the medium and larger-sized communities that the dataset encompasses, <b>the message is clear: all across the country, women do not have the same representation as men.</b> The following visualizations offer some insights into where female under-representation is happening the most.
     </p>
-    <h2>Top 10 Most Underrepresented Counties in Female Representation</h2>
-<table id="countiesTable">
-    <tr>
-        <th>County</th>
-        <th>Female Representation (%)</th>
-    </tr>
-    <!-- Table rows will be inserted here -->
-</table>
-
-
       <h2>Historically, do women serve as county executive?</h2> 
+      <h4> I want to just look for my county </h4>
+      <p> You can search through all available counties to see per-county results:<p>
+        <title>Searchable Table</title>
+</head>
+<body>
+    <label for="geonameDropdown">Select County Name:</label>
+            <select id="geonameDropdown"></select>
+
+            <table id="countiesTable">
+        <!-- Table content will be dynamically added here -->
+            </table>
+<script src="populateTable.js"></script>
+<h4> I want to see the country as a whole </h4>
       <p> You can change between two types of maps, a version that shows you our overall score for representation and another that breaks down the statistics:<p>
 
 <div class="content-wrapper">
@@ -86,8 +89,8 @@
         <div id="mapText_chi"></div>
     </div>
 </div>
-           <script type="module" src="us_county_map_female_representation_score.js"></script>
-    </br></br>
+            <script type="module" src="us_county_map_female_representation_score.js"></script>
+    <br><br>
            <script type="module" src="us_county_map_chi_test.js"></script>
         </div>
     <div class="textcontainer">
@@ -97,7 +100,6 @@
          </p></div>
      </div>
  </div>
- <script src="populateTable.js"></script>
 
 </body>
     <footer>
