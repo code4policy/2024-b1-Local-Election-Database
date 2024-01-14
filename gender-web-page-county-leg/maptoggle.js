@@ -1,7 +1,7 @@
 // Get the dropdown and corresponding content divs
 const mapToggle = document.getElementById('mapToggle');
-const mapScore = document.getElementById('map_score');
-const mapChi = document.getElementById('map_chi');
+const mapScore = document.getElementById('map_score_legislature');
+const mapChi = document.getElementById('map_chi_legislature');
 
 // Add event listener to the dropdown for change event
 mapToggle.addEventListener('change', toggleMap);
