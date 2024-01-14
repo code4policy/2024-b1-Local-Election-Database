@@ -43,6 +43,15 @@
     <p>
         However, in the medium and larger-sized communities that the dataset encompasses, <b>the message is clear: all across the country, women do not have the same representation as men.</b> The following visualizations offer some insights into where female under-representation is happening the most.
     </p>
+    <h2>Top 10 Most Underrepresented Counties in Female Representation</h2>
+<table id="countiesTable">
+    <tr>
+        <th>County</th>
+        <th>Female Representation (%)</th>
+    </tr>
+    <!-- Table rows will be inserted here -->
+</table>
+
 
       <h2>Historically, do women serve as county executive?</h2> 
       <p> You can change between two types of maps, a version that shows you our overall score for representation and another that breaks down the statistics:<p>
@@ -58,7 +67,7 @@
     <div id="map_score" style="display: none;">
         <div class="toggle-content">
             <h2>Let's answer that question on a scale from 1-10.</h2>
-            <p>The Local Elections Database holds the results of county executive elections for 126 counties (out of 3,143) in the US. Here, we visualized the counties by the female gender representation. The color is assigned by a simple gender representation score given by the ratio of female county executives within the available data, scaled to a 10-point scale and rounded to the nearest whole number. Where a 0 means that no women have been elected, a 5 indicated gender parity and a 10 overrepresentation of women. In summ, the data show nearly <b>60% of the county gets a 0 for female representation</b>. </p>
+            <p>The Local Elections Database holds the results of county executive elections for 126 counties (out of 3,143) in the US. Here, we visualized the counties by the female gender representation. The color is assigned by a simple gender representation score given by the ratio of female county executives within the available data, scaled to a 10-point scale and rounded to the nearest whole number, where a 0 means that no women have been elected, a 5 indicated gender parity and a 10 overrepresentation of women. In summ, the data show nearly <b>60% of the county gets a 0 for female representation</b>. </p>
         </div>
         <div class="tooltip_score" style="opacity: 0;"></div>
         <div id="map-legend_score"></div>
@@ -70,7 +79,7 @@
     <div id="map_chi" style="display: none;">
         <div class="toggle-content">
             <h2>Let's talk statistics.</h2>
-            <p>In this visualization, we have presented the counties according to the outcomes of the Chi-squared test, which was conducted under the assumption of a 1:1 gender distribution with a significance level of p < 0.05. The analysis reveals that approximately 47% of the counties exhibit a gender bias in their election results. This significant finding underscores the urgent need for enhanced gender representation in regional political landscapes, calling attention to the disparities that currently exist.
+            <p>In this visualization, we have presented the counties according to the outcomes of the Chi-squared test, which was conducted under the assumption of a 1:1 gender distribution with a significance level of p < 0.05. The analysis reveals that approximately <b>47% of the counties exhibit a gender bias in their election results</b>. This significant finding underscores the urgent need for enhanced gender representation in regional political landscapes, calling attention to the disparities that currently exist.
             </p>
         </div>
         <div class="tooltip_chi" style="opacity: 0;"></div>
@@ -88,6 +97,8 @@
          </p></div>
      </div>
  </div>
+ <script src="populateTable.js"></script>
+
 </body>
     <footer>
         <p>&copy; 2024 The Local Elections Database Project, a student team at the Harvard Kennedy School. All rights reserved.</p>
