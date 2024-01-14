@@ -237,4 +237,3 @@ d3.json("us-states.json").then(function(statesData) {
 
 // Call the function to draw the map
 drawMap();
-

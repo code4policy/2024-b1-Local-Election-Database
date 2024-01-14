@@ -118,7 +118,7 @@ console.log('No data found for', data);
                        // console.log('No data found for', dataMap);
                         var dataRow = dataMap.get(countyFIPS);
                         if (dataRow === undefined) {
-                            console.log('No data found for', countyFIPS);
+                            // console.log('No data found for', countyFIPS);
                             return "#ccc"; // Default color for missing data
                         }
                         return color(dataRow.Representation);
