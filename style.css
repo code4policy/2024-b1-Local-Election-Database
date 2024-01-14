@@ -411,11 +411,7 @@ nav {
 }
 
 
-#map_chi {
-    position: relative; /* This makes it a reference for absolute children positioning */
-}
-
-#map_score {
+#map_chi, #map_score, #map_chi_legislature, #map_score_legislature {
     position: relative; /* This makes it a reference for absolute children positioning */
 }
 
