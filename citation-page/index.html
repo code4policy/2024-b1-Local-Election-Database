@@ -70,7 +70,26 @@
                 <div class="accordion-item">
                     <div class="accordion-header" data-title="How has the team modified the original dataset?">+ How has the team modified the original dataset?</div>
                     <div class="accordion-content">
-                        <p>The Local Elections Databse Project has not modified the dataset as of yet. All data reflect interim demonstrations of our visualizations' capabilities and all links are to the current dataset. However, we will update this section if and when we make modifications to the original dataset to meet our stakeholders' needs.</p>
+                        <p>
+                            The maps that display representation on a 10-point scale (e.g. "Heading of Scoring Map on gender-web-page") are for activists and organization leaders that would like a ready-made heuristic for governmental entities that represent social groups like women less than their share of the population. 
+                        </p>
+                        <p>
+                            We downloaded the file ledb_candidadatelevel.csv <a href="https://osf.io/mv5e6/">from the original dataset</a> and rn a program to create a dataframe of aggregated elections by county with the number of men and women who ran for office, the number that won, and the total number of seats available. 
+                        </p>
+                        <p>
+                            Additionally, we merged the data with counties_constituency_data1.csv, a file with data on the proportion of women per county in the <a href="https://osf.io/mv5e6/">American Local Government Election Database</a>, and it is also available for download <a href="https://github.com/code4policy/2024-b1-Local-Election-Database">from our project repository</a>.
+                        </p>
+                        <p>
+                            Finally, the program also creates a representation variable that is the number of female winners over the percent of women in the population. We transformed this value into a representation score by multiplying each value (which was in the range {0,2}) by 5. 
+                        </p>
+                        <p>
+                            We also displayed representation as a statistical value using the Chi-square statistical test. The Chi-square test helps researchers identify outlier counties with statistically-anomalous levels of representation.
+                        </p>
+                        <p>
+                            We modified ledb_candidatelevel.csv again to create a modified dataset with fips codes, year of election, and the estimated gender value, value or female, of the elected representatives.
+                        </p>
+                            Then, we ran the program gender-count-chisquare-with-female-representation-score.py to apply the Chi-Sqaure Goodness of Fit Test for each row of data. These results populate a file called chi_square_results_with_female_representation_score_by_fips.csv. This file is also within the <a href="https://github.com/code4policy/2024-b1-Local-Election-Database">"Gender Web Page"</a> folder in the repository.
+                        </p>
                     </div>
                 </div>
             </div>
