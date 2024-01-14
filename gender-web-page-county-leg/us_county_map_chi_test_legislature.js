@@ -152,7 +152,7 @@ console.log('No data found for', data);
                         tooltip.html(
                             `County: ${d.properties.NAME}<br/>
                              Female Count: ${countyData.FemaleCount}<br/>
-                             Male Counts: ${countyData.MaleCount}<br/>
+                             Male Count: ${countyData.MaleCount}<br/>
                              Representation: ${countyData.Representation}`
                         )
                     }
