@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<html>
 <head>
     <title>The Local Elections Database Project</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://use.typekit.net/qnf2gwf.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+<body>
     <div class="container">
-    <header> 
+        <header> 
     <nav>
 <a href="../index.html" id="logo-link">
             <img src="https://code4policy.com/2024-b1-Local-Election-Database/HKSlogo_ash_cmyk.png" alt="Ash Center for Democratic Governance and Innovation" id="logo-image">
@@ -23,9 +23,8 @@
 </ul>
   </nav>
 </header>
-<div class="textcontainer">
-    <body>
-        <h1>About the Data</h1>
+        <div class="textcontainer">
+            <h1>About the Data</h1>
         <p>In 2022, Justin de Benedictis-Kessner (Harvard Kennedy School), Diana Da In Lee (Columbia University), Yamil Velez (Columbia University), and Christopher Warshaw (Georgia Washington University) released the Local Elections Database - a new, comprehensive database of about 78,000 candidates in 57,500 local electoral contests between 1989-2021. The novel dataset contains information on candidates, election results, and key demographics, including race and gender.</p>
          <p><a href="https://osf.io/mv5e6/" class="blue-btn">Download the Full Local Government Elections Dataset</a></p><p><br></p>
         <h2>Citing the Original Dataset</h2>
@@ -42,12 +41,12 @@
                 <div class="accordion-item">
                     <div class="accordion-header" data-title="How should I cite the original authors' work?">+ How should I cite the original authors' work?</div>
                     <div class="accordion-content">
-                        <p>You can cite the database as:</p>
-                        <p>de Benedictis-Kessner, J., Lee, D., Velez, Y. R., & Warshaw, C. (2023, May 16). American Local Government Elections Database. Retrieved from osf.io/mv5e6</p>
+                        <p>You can cite the database as:</p><div id="textToCopy">
+                        <p>de Benedictis-Kessner, J., Lee, D., Velez, Y. R., & Warshaw, C. (2023, May 16). American Local Government Elections Database. Retrieved from osf.io/mv5e6</p></div><button onclick="copyText()">Copy Text</button>
                         <p>You can cite the authors' working paper as:</p>
-                        <p>
+                        <div id="textToCopy"><p>
                             de Benedictis-Kessner, Justin, Diana Da In Lee, Yamil R. Velez, and Christopher Warshaw. "American Local Government Elections Database." HKS Faculty Research Working Paper Series RWP22-013, September 2022 (rev. June 2023).
-                        </p>
+                        </p><button onclick="copyText()">Copy Text</button></div>
                         <p>
                             <a href="https://nrs.harvard.edu/URN-3:HUL.INSTREPOS:37373139">Access the working paper</a>.
                         </p>
@@ -62,10 +61,10 @@
                     <div class="accordion-header" data-title="How should I cite this website?">+ How should I cite this website?</div>
                     <div class="accordion-content">
                         <p>You can cite the website as:</p>
-                        <p>
+                        <div id="textToCopy"><p>
                             Ahmed, K, Grucza, S., Martinez, B., Nakamura, K. <em>The Local Election Databse Project.</em> (2024, Jan. 15). 
-                        de Benedictis-Kessner, J., Lee, D., Velez, Y. R., & Warshaw, C. (2023, May 16). <em>Link to the website will go here</em>.
-                        </p>
+                        de Benedictis-Kessner, J., Lee, D., Velez, Y. R., & Warshaw, C. (2023, May 16). <em>https://code4policy.com/2024-b1-Local-Election-Database/index.html</em>.
+                        </p></div><button onclick="copyText()">Copy Text</button>
                     </div>
                 </div>
                 <div class="accordion-item">
@@ -112,6 +111,7 @@
     </div>
 </div>
 <script src="../accordion_script.js"></script>
+<script src="copyfunction.js"></script>
 </div>
     </body>
     <footer>

@@ -461,11 +461,18 @@ nav {
   display: inline-block;
 }
 
-/* Creating the toggle option */
 /* Style for the dropdown */
 .content-wrapper select {
     padding: 10px;
     font-size: 16px;
+}
+
+/* Style for the copy button */
+.content-wrapper button {
+    margin-top: 10px; /* Adjust as needed for spacing */
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 table {
@@ -480,4 +487,3 @@ th, td {
 th {
     background-color: #f2f2f2;
 }
-
