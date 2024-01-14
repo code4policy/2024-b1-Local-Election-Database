@@ -1,12 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-// populateTable.js
 const csvData = `fips,geoname,num_M,num_F,f_winner,m_winner,num_seats,percent_women,female_representation,f_representation_score
 01083,Limestone,10,0,0,6,6,0.500765357289896,0.0,0
 02020,Anchorage,8,1,0,1,1,0.490104963359918,0.0,0
 02090,Fairbanks North Star Borough,22,7,1,10,11,0.460826469638243,0.19727402156489876,1
-02122,,22,4,0,11,11,0.478653530377668,0.0,0
-02170,,20,7,3,9,12,0.479562300107242,0.5213087015891237,3
+02122,Kenai Peninsula Borough,22,4,0,11,11,0.478653530377668,0.0,0
+02170,Matanuska-Susitna Borough,20,7,3,9,12,0.479562300107242,0.5213087015891237,3
 05031,Craighead,4,0,0,2,2,0.511984722157529,0.0,0
 05045,Faulkner,2,0,0,1,1,0.511478353717725,0.0,0
 05051,Garland,2,0,0,1,1,0.520115671452488,0.0,0
@@ -142,40 +141,115 @@ const csvData = `fips,geoname,num_M,num_F,f_winner,m_winner,num_seats,percent_wo
 55133,waukesha,9,1,0,7,7,0.508154067045384,0.0,0
 `;
 
-function parseCSV(data) {
-    const lines = data.split("\n");
-    const result = [];
-    const headers = lines[0].split(",").map(header => header.trim());
+    function parseCSV(data) {
+        const lines = data.split("\n");
+        const result = [];
+        const headers = lines[0].split(",").map(header => header.trim());
 
-    for (let i = 1; i < lines.length; i++) {
-        if (!lines[i]) continue;
-        const obj = {};
-        const currentline = lines[i].split(",").map(cell => cell.trim());
+        for (let i = 1; i < lines.length; i++) {
+            if (!lines[i]) continue;
+            const obj = {};
+            const currentline = lines[i].split(",").map(cell => cell.trim());
 
-        for (let j = 0; j < headers.length; j++) {
-            obj[headers[j]] = currentline[j];
+            for (let j = 0; j < headers.length; j++) {
+                obj[headers[j]] = currentline[j];
+            }
+
+            result.push(obj);
         }
 
-        result.push(obj);
+        return result;
     }
 
-    return result;
-}
+    function createTable(filteredData) {
+        const table = document.getElementById('countiesTable');
+        table.innerHTML = "";
 
-function createTable(data) {
-    const table = document.getElementById('countiesTable');
+        // Add table headers
+        let headerRow = table.insertRow();
+        let headerCell1 = headerRow.insertCell(0);
+        let headerCell2 = headerRow.insertCell(1);
+        let headerCell3 = headerRow.insertCell(2);
+        let headerCell4 = headerRow.insertCell(3);
+        let headerCell5 = headerRow.insertCell(4);
+        let headerCell6 = headerRow.insertCell(5);
 
-    data.slice(0, 10).forEach(item => {
-        let row = table.insertRow();
-        let cell1 = row.insertCell(0);
-        let cell2 = row.insertCell(1);
+        headerCell1.innerHTML = '<b>County Name</b>';
+        headerCell2.innerHTML = '<b>Female Representation</b>';
+        headerCell3.innerHTML = '<b>Male Candidates</b>';
+        headerCell4.innerHTML = '<b>Female Candidates</b>';
+        headerCell5.innerHTML = '<b>Female Winners</b>';
+        headerCell6.innerHTML = '<b>Male Winners</b>';
 
-        cell1.innerHTML = item.geoname;
-        cell2.innerHTML = (parseFloat(item.female_representation) * 100).toFixed(2) + '%';
+        filteredData.forEach(item => {
+            let row = table.insertRow();
+            let cell1 = row.insertCell(0);
+            let cell2 = row.insertCell(1);
+            let cell3 = row.insertCell(2);
+            let cell4 = row.insertCell(3);
+            let cell5 = row.insertCell(4);
+            let cell6 = row.insertCell(5);
+
+            // Capitalize geoname
+            cell1.innerHTML = item.geoname.toUpperCase();
+            cell2.innerHTML = (parseFloat(item.female_representation) * 100).toFixed(2) + '%';
+            cell3.innerHTML = item.num_M;
+            cell4.innerHTML = item.num_F;
+            cell5.innerHTML = item.f_winner;
+            cell6.innerHTML = item.m_winner;
+        });
+    }
+
+
+    function populateDropdown(data) {
+        const dropdown = document.getElementById('geonameDropdown');
+        dropdown.innerHTML = "";
+
+        const options = [
+            { label: "No representation", min: 0, max: 0.0 },
+            { label: "Some representation", min: 0.1, max: 0.4 },
+            { label: "Representative", min: 0.4, max: 0.6 },
+            { label: "Over representation", min: 0.6, max: 1 }
+        ];
+
+        options.forEach(option => {
+            const filteredData = data.filter(item => {
+                const percentage = parseFloat(item.female_representation);
+                return percentage >= option.min && percentage <= option.max;
+            });
+
+            console.log(`Filtered Data for ${option.label}:`, filteredData); // Logging
+
+            if (filteredData.length > 0) {
+                let optgroup = document.createElement('optgroup');
+                optgroup.label = option.label;
+
+                filteredData.forEach(item => {
+                    let optionElement = document.createElement('option');
+                    optionElement.value = item.geoname;
+                    optionElement.textContent = item.geoname.toUpperCase(); // Capitalize geoname
+                    optgroup.appendChild(optionElement);
+                });
+
+                dropdown.appendChild(optgroup);
+            } else {
+                console.log(`No data for ${option.label}`); // Logging
+            }
+        });
+    }
+
+    // Parse CSV data
+    const parsedData = parseCSV(csvData);
+
+    // Populate dropdown
+    populateDropdown(parsedData);
+
+    // Event listener for dropdown change
+    document.getElementById('geonameDropdown').addEventListener('change', function () {
+        const selectedGeoname = this.value;
+        const selectedRow = parsedData.find(item => item.geoname === selectedGeoname);
+        createTable([selectedRow]);
     });
-}
-
-const parsedData = parseCSV(csvData);
-const sortedData = parsedData.sort((a, b) => parseFloat(a.female_representation) - parseFloat(b.female_representation));
-createTable(sortedData);
 });
+
+
