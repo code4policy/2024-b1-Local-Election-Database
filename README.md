@@ -16,23 +16,23 @@ To recreate the data we utilized, take the following steps:
 
 1. Download ledb_candidadatelevel.csv. This file contains original data from the [American Local Government Elections Database] (https://osf.io/mv5e6/).
 
-2. Run the program county-executive-map-data.py on your device. This program uses the FIPS code to create a dataframe of aggregated elections by county with the number of men and women who ran for office, the number that won, and the total number of seats available. 
+2. Run the program county-executive-map-data.py on your device. This program uses the FIPS code to create a data frame of aggregated elections by county with the number of men and women who ran for office, the number that won, and the total number of seats available. 
 
 3. The program also creates the file county-executive-map-data.csv, a version of which you can download directly from our GitHub repository.
 
 4. The program also merges the data with a file with data on the proportion of women per county. That file, counties_constituency_data1.csv, is another original dataset from the [American Local Government Elections Database] (https://osf.io/mv5e6/), and it is also available for download from this repository.
 
-5. Finally, the program also creates a representation variable that is the number of female winners over the percent of women in the population. We transformed this value into a representation score by multiplying each value (which was in the range {0,2}) by 5. 
+5. Finally, the program also creates a representation variable: the number of female winners over the percentage of women in the population. We transformed this value into a representation score by multiplying each value (which was in the range {0,2}) by 5. 
 
 ## Replicating the Chi-square Visualization
 
-We also displayed representation as a statistical value using the Chi-square statistical test. The Chi-sqaure test examines the differences between categorical variables from a random sample in order to judge the goodness of fit between expected and observed results. Some counties, statistically speaking, should be more and less representative than an expected 1:1 representation between a community population and the proportion of representatives from that social group. The Chi-square test helps researchers identify outlier counties with statistically-anomalous levels of representation.
+We also displayed representation as a statistical value using the Chi-square statistical test. The Chi-sqaure test examines the differences between categorical variables from a random sample in order to judge the goodness of fit between expected and observed results. Some counties, statistically speaking, should be more and less representative than an expected 1:1 representation between a community population and the proportion of representatives from that social group. The Chi-square test helps researchers identify outlier counties with statistically anomalous levels of representation.
 
 To recreate the data we utilized, take the following steps: 
 
 1. Download county-executive.csv from the "Gender Web Page" folder. This is a modified dataset of ledb_candidatelevel.csv with fips codes, year of election, and the estimated gender value, value or female, of the elected representatives.
 
-2. Run the program gender-count-chisquare-with-female-representation-score.py. This program created a dataframe that created columns for the total count of winners per FIPS code. 
+2. Run the program gender-count-chisquare-with-female-representation-score.py. This program created a data frame that created columns for the total count of winners per FIPS code. 
 
 3. The program applies the Chi-Sqaure Goodness of Fit Test for each row of data, combines the results with the gender count data, and adds a p-value score to indicate whether the difference in representation is statistically significant. These results populate a file called chi_square_results_with_female_representation_score_by_fips.csv. This file is also within the "Gender Web Page" folder in the repository.
 
