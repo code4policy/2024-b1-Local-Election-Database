@@ -1,22 +1,24 @@
+document.addEventListener("DOMContentLoaded", function () {
+
 // populateTable.js
 const csvData = `fips,geoname,num_M,num_F,f_winner,m_winner,num_seats,percent_women,female_representation,f_representation_score
-01083,limestone,10,0,0,6,6,0.500765357289896,0.0,0
-02020,anchorage,8,1,0,1,1,0.490104963359918,0.0,0
-02090,,22,7,1,10,11,0.460826469638243,0.19727402156489876,1
+01083,Limestone,10,0,0,6,6,0.500765357289896,0.0,0
+02020,Anchorage,8,1,0,1,1,0.490104963359918,0.0,0
+02090,Fairbanks North Star Borough,22,7,1,10,11,0.460826469638243,0.19727402156489876,1
 02122,,22,4,0,11,11,0.478653530377668,0.0,0
 02170,,20,7,3,9,12,0.479562300107242,0.5213087015891237,3
-05031,craighead,4,0,0,2,2,0.511984722157529,0.0,0
-05045,faulkner,2,0,0,1,1,0.511478353717725,0.0,0
-05051,garland,2,0,0,1,1,0.520115671452488,0.0,0
-05069,jefferson,4,0,0,2,2,0.505181721081955,0.0,0
-05119,pulaski,10,1,0,6,6,0.521855524764166,0.0,0
-05125,saline,4,0,0,2,2,0.509517229828748,0.0,0
-05131,saline,4,1,0,3,3,0.511384031789076,0.0,0
-05143,washington,2,2,2,0,2,0.500983688422612,1.996072972253012,10
-05145,white,11,0,0,5,5,0.511515705543282,0.0,0
-08031,denver,4,1,0,2,2,0.499258761635883,0.0,0
-10003,new castle,15,0,0,9,9,0.515990758138322,0.0,0
-12086,miami-dade,23,6,1,7,8,0.51417152078144,0.24310953630808738,1
+05031,Craighead,4,0,0,2,2,0.511984722157529,0.0,0
+05045,Faulkner,2,0,0,1,1,0.511478353717725,0.0,0
+05051,Garland,2,0,0,1,1,0.520115671452488,0.0,0
+05069,Jefferson,4,0,0,2,2,0.505181721081955,0.0,0
+05119,Pulaski,10,1,0,6,6,0.521855524764166,0.0,0
+05125,Saline,4,0,0,2,2,0.509517229828748,0.0,0
+05131,Saline,4,1,0,3,3,0.511384031789076,0.0,0
+05143,Washington,2,2,2,0,2,0.500983688422612,1.996072972253012,10
+05145,White,11,0,0,5,5,0.511515705543282,0.0,0
+08031,Denver,4,1,0,2,2,0.499258761635883,0.0,0
+10003,New castle,15,0,0,9,9,0.515990758138322,0.0,0
+12086,Miami-dade,23,6,1,7,8,0.51417152078144,0.24310953630808738,1
 13021,bibb,10,0,0,5,5,0.530580939947781,0.0,0
 13045,carroll,4,0,0,2,2,0.513376513658124,0.0,0
 13059,clarke,7,7,5,2,7,0.524117106264266,1.3628361023682427,7
@@ -141,7 +143,7 @@ const csvData = `fips,geoname,num_M,num_F,f_winner,m_winner,num_seats,percent_wo
 `;
 
 function parseCSV(data) {
-    const lines = data.split("\\n");
+    const lines = data.split("\n");
     const result = [];
     const headers = lines[0].split(",").map(header => header.trim());
 
@@ -176,3 +178,4 @@ function createTable(data) {
 const parsedData = parseCSV(csvData);
 const sortedData = parsedData.sort((a, b) => parseFloat(a.female_representation) - parseFloat(b.female_representation));
 createTable(sortedData);
+});
