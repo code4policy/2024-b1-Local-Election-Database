@@ -165,7 +165,7 @@ header {
 
 #logo-image {
     display: flex;
-    height: 40px; /* Adjust the height of your logo as needed */
+    height: 75px; /* Adjust the height of your logo as needed */
     width: auto; /* Maintain the aspect ratio while adjusting the height */
     padding-bottom: 30px;
 }
