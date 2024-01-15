@@ -41,7 +41,7 @@ To recreate the data we utilized, take the following steps for county executive 
 For county legislature election, go to the "gender-web-page-by-county-leg" folder, replace the files in above steps 
 - county-executive.csv > county-legislature.csv, 
 - gender-count-chisquare-with-female-representation-score.py > gender-count-chisquare-with-female-representation-score-legislature.py, 
-- chi_square_results_with_female_representation_score_by_fips.csv > chi_square_results_with_female_representation_score_by_fips_legislature.csv, 
+- chi_square_results_with_female_representation_score_by_fips.csv > chi_square_results_with_female_representation_score_by_fips_legislature.csv
 
 and follow the above steps.
 
