@@ -14,13 +14,13 @@ The maps that display representation on a 10-point scale (e.g. "Heading of Scori
 
 To recreate the data we utilized, take the following steps for county executive election: 
 
-1. Download ledb_candidadatelevel.csv. This file contains original data from the [American Local Government Elections Database] (https://osf.io/mv5e6/).
+1. Download ledb_candidadatelevel.csv from the "data" folder. This file contains original data from the [American Local Government Elections Database] (https://osf.io/mv5e6/).
 
-2. Run the program county-executive-map-data.py on your device. This program uses the FIPS code to create a data frame of aggregated elections by county with the number of men and women who ran for office, the number that won, and the total number of seats available. 
+2. Run the program county-executive-map-data.py on your device after downloading it from the "python" folder. This program uses the FIPS code to create a data frame of aggregated elections by county with the number of men and women who ran for office, the number that won, and the total number of seats available. 
 
-3. The program also creates the file county-executive-map-data.csv, a version of which you can download directly from our GitHub repository.
+3. The program also creates the file county-executive-map-data.csv, a version of which you can download directly from our GitHub repository from the "data" folder.
 
-4. The program also merges the data with a file with data on the proportion of women per county. That file, counties_constituency_data1.csv, is another original dataset from the [American Local Government Elections Database] (https://osf.io/mv5e6/), and it is also available for download from this repository.
+4. The program also merges the data with a file with data on the proportion of women per county. That file, counties_constituency_data1.csv, is another original dataset from the [American Local Government Elections Database] (https://osf.io/mv5e6/), and it is also available for download from this repository within the "data" folder.
 
 5. Finally, the program also creates a representation variable: the number of female winners over the percentage of women in the population. We transformed this value into a representation score by multiplying each value (which was in the range {0,2}) by 5. 
 
@@ -30,20 +30,19 @@ We also displayed representation as a statistical value using the Chi-square sta
 
 To recreate the data we utilized, take the following steps for county executive election: 
 
-1. Download county-executive.csv from the "gender-web-page" folder. This is a modified dataset of ledb_candidatelevel.csv with fips codes, year of election, and the estimated gender value, value or female, of the elected representatives.
+1. Download county-executive.csv from the "data" folder. This is a modified dataset of ledb_candidatelevel.csv with fips codes, year of election, and the estimated gender value, value or female, of the elected representatives.
 
-2. Run the program gender-count-chisquare-with-female-representation-score.py. This program created a data frame that created columns for the total count of winners per FIPS code. 
+2. Run the program gender-count-chisquare-with-female-representation-score.py, located in the "python" folder. This program created a data frame that created columns for the total count of winners per FIPS code. 
 
-3. The program applies the Chi-Sqaure Goodness of Fit Test for each row of data, combines the results with the gender count data, and adds a p-value score to indicate whether the difference in representation is statistically significant. These results populate a file called chi_square_results_with_female_representation_score_by_fips.csv. This file is also within the "gender-web-page" folder in the repository.
+3. The program applies the Chi-Sqaure Goodness of Fit Test for each row of data, combines the results with the gender count data, and adds a p-value score to indicate whether the difference in representation is statistically significant. These results populate a file called chi_square_results_with_female_representation_score_by_fips.csv. This file is also within the "data" folder in the repository.
 
 4. Files in the folder can reproduce the map visualizations you see on the "By Gender" page of the website.
 
-For county legislature election, go to the "gender-web-page-by-county-leg" folder, replace the files in above steps 
+For county legislature election, you can go to the "python" and "data" folders and recreate our files using the above steps and the following file names: 
+
 - county-executive.csv > county-legislature.csv, 
 - gender-count-chisquare-with-female-representation-score.py > gender-count-chisquare-with-female-representation-score-legislature.py, 
 - chi_square_results_with_female_representation_score_by_fips.csv > chi_square_results_with_female_representation_score_by_fips_legislature.csv
-
-and follow the same steps.
 
 ## Credits
 
