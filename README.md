@@ -22,21 +22,23 @@ To recreate the data we utilized, take the following steps:
 
 4. The program also merges the data with a file with data on the proportion of women per county. That file, counties_constituency_data1.csv, is another original dataset from the [American Local Government Elections Database] (https://osf.io/mv5e6/), and it is also available for download from this repository.
 
-5. Finally, the program also creates a representation variable: the number of female winners over the percentage of women in the population. We transformed this value into a representation score by multiplying each value (which was in the range {0,2}) by 5. 
+5. Finally, the program also creates a representation variable: the number of female winners over the percentage of women in the population. We transformed this value into a representation score by multiplying each value (which was in the range {0,1}) by 10. 
 
 ## Replicating the Chi-square Visualization
 
 We also displayed representation as a statistical value using the Chi-square statistical test. The Chi-sqaure test examines the differences between categorical variables from a random sample in order to judge the goodness of fit between expected and observed results. Some counties, statistically speaking, should be more and less representative than an expected 1:1 representation between a community population and the proportion of representatives from that social group. The Chi-square test helps researchers identify outlier counties with statistically anomalous levels of representation.
 
-To recreate the data we utilized, take the following steps: 
+To recreate the data we utilized, take the following steps for county executive election: 
 
-1. Download county-executive.csv from the "Gender Web Page" folder. This is a modified dataset of ledb_candidatelevel.csv with fips codes, year of election, and the estimated gender value, value or female, of the elected representatives.
+1. Download county-executive.csv from the "gender-web-page" folder. This is a modified dataset of ledb_candidatelevel.csv with fips codes, year of election, and the estimated gender value, value or female, of the elected representatives.
 
 2. Run the program gender-count-chisquare-with-female-representation-score.py. This program created a data frame that created columns for the total count of winners per FIPS code. 
 
-3. The program applies the Chi-Sqaure Goodness of Fit Test for each row of data, combines the results with the gender count data, and adds a p-value score to indicate whether the difference in representation is statistically significant. These results populate a file called chi_square_results_with_female_representation_score_by_fips.csv. This file is also within the "Gender Web Page" folder in the repository.
+3. The program applies the Chi-Sqaure Goodness of Fit Test for each row of data, combines the results with the gender count data, and adds a p-value score to indicate whether the difference in representation is statistically significant. These results populate a file called chi_square_results_with_female_representation_score_by_fips.csv. This file is also within the "gender-web-page" folder in the repository.
 
 4. Files in the folder can reproduce the map visualizations you see on the "By Gender" page of the website.
+
+For county legislature election, go to the "gender-web-page-by-county-leg" folder, replace the files in above steps county-executive.csv > county-legislature.csv, gender-count-chisquare-with-female-representation-score.py > gender-count-chisquare-with-female-representation-score-legislature.py, chi_square_results_with_female_representation_score_by_fips.csv > chi_square_results_with_female_representation_score_by_fips.csv > chi_square_results_with_female_representation_score_by_fips_legislature.csv, and follow the above steps.
 
 ## Credits
 
