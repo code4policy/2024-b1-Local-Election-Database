@@ -1,0 +1,524 @@
+/* Set body dimensions */
+
+.container {
+  max-width: 900px; /* Adjust the max-width according to your design */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 20px 20px 20px 20px; /* Optional padding for the container */
+}
+
+/* Customizing to width and padding of the main page (non-header) content */
+.textcontainer,
+.toggle-content {
+  max-width: 700px; /* Adjust the max-width according to your design */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 0px 20px 20px 20px; /* Optional padding for the container */
+}
+
+main {
+  width: 70%; /* Set the main content width to 60% of the container */
+  margin: 0 auto; /* Center the main content horizontally */
+}
+
+body {
+  margin: 0 auto;
+  max-width: 900px;
+  align-content: center;
+  background-color: #F5F3EF;
+  padding: 20px 20px 20px 20px;
+}
+
+/* Customizing Paragraph Text */
+p {
+  font-family: "halyard-display", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 17px; 
+  color: #333; 
+  line-height: 28.5px; 
+}
+
+b {
+  font-family: "halyard-display", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px; 
+  color: #333; 
+  line-height: 1.5; 
+}
+
+i {
+  font-family: "halyard-display", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+  font-size: 16px; 
+  color: #333; 
+  line-height: 1.5; 
+}
+
+em {
+  font-family: "halyard-display", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+  font-size: 16px; 
+  color: #333; 
+  line-height: 1.5; 
+}
+
+ul {
+  font-family: "halyard-display", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 17px; /* Change the font size */
+  color: #333; /* Change the text color */
+  line-height: 1.5; /* Adjust the line height */
+}
+
+ol {
+  font-family: "halyard-display", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 17px; /* Change the font size */
+  color: #333; /* Change the text color */
+  line-height: 1.5; /* Adjust the line height */
+}
+
+a {
+  color: royalblue;
+}
+
+h1 {
+  font-family: "superior-title", serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 30px; /* Change the font size */
+  color: #333; /* Change the text color */
+  margin-top: 0.5em; /* Adjust the space above the text */
+}
+
+h2 {
+  font-family: "superior-title", serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 25px; /* Change the font size */
+  color: #333; /* Change the text color */
+  line-height: 1; /* Adjust the line height */
+
+}
+
+h3 {
+font-family: "halyard-display", sans-serif;
+font-weight: 200;
+font-style: normal;
+font-size: 20px; /* Change the font size */
+}
+
+h4 {font-family: "superior-title", serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 20px; /* Change the font size */
+  color: #333; /* Change the text color */
+  line-height: 1; /* Adjust the line height */
+}
+
+h5 {
+  font-size: 20px; /* Change the font size */
+  color: #333; /* Change the text color */
+  line-height: 1; /* Adjust the line height */
+}
+
+.pronunciation {
+  font-family: "superior-title", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px; /* Change the font size */
+  color: #666666; /* Change the text color */
+  line-height: 1; /* Adjust the line height */
+}
+
+/* footer styling */
+footer {
+    background-color: #F5F3EF; /* Set your desired background color */
+    padding: 5px 10px 5px 10px;
+}
+
+.footer-style {
+  font-family: "halyard-display", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 14px; /* Change the font size */
+  color: #000000; /* Change the text color */
+  line-height: 1.5; /* Adjust the line height */
+}
+
+/* heading styling */
+header {
+    margin: 0 auto;
+    max-width: 900px;
+    align-content: center;
+    background-color: #F5F3EF; /* Set your desired background color */
+    padding: 10px 10px 0px 10px;
+}
+
+#logo-link {
+    display: inline-block;
+}
+
+#logo-image {
+    display: flex;
+    height: 80px; /* Adjust the height of your logo as needed */
+    width: auto; /* Maintain the aspect ratio while adjusting the height */
+    padding-bottom: 30px;
+}
+
+/* styles for hover button */
+.blue-btn {
+            font-family: "halyard-display", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+            font-size: 14px;
+            padding: 10px 20px;
+            text-decoration: none;
+            background-color: #CC0033;
+            color: #fff;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        .blue-btn:hover {
+            background-color: #0A0A0A;
+        }
+
+.small-btn {
+            font-family: "halyard-display", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+            font-size: 12px;
+            padding: 10px 20px;
+            text-decoration: none;
+            background-color: #CC0033;
+            color: #fff;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        .small-btn:hover {
+            background-color: #0A0A0A;
+        }
+
+/* Styling for Accordion Feature */
+.accordion-container {
+  padding: 30px 30px 30px 30px;
+  background-color: #F5F3EF; /* Gray background color */
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+}
+
+.accordion-item {
+  border: 1px solid #ccc;
+  margin-bottom: 5px;
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff; /* Header background color */
+  border-bottom: 1px solid #ccc;
+  font-family: "halyard-display", sans-serif;
+  font-weight: 300;
+  font-size: 16px; /* Change the font size */
+  color: #333; /* Change the text color */
+}
+
+.accordion-content {
+  display: none;
+  padding: 10px;
+  transition: display 0.3s ease-out;
+  font-family: "halyard-display", sans-serif;
+  font-weight: 300;
+  font-size: 16px; /* Change the font size */
+  color: #333; /* Change the text color */
+}
+
+.accordion-header.open {
+  background-color: #fff;
+  font-family: "halyard-display", sans-serif;
+  font-weight: 300;
+  font-size: 16px; /* Change the font size */
+  color: #333; /* Change the text color */
+}
+
+/* Styling for Headshot Image Feature */
+.head-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover; /* or any other value based on your design preference */
+  margin-right: 20px;
+  float: left; /* Add float: left; for the image positioning */
+}
+
+/* Container for each team member's section */
+.team-member {
+  display: flex;
+  align-items: flex-start; /* Align items at the start (top) of the flex container */
+  margin-bottom: 30px; /* Add some margin between team members */
+}
+
+/* Clear the float after each team member's section */
+.team-member::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style for the tooltip */
+.tooltip {
+  position: absolute;
+  text-align: center;
+  padding: 6px;
+  font: 20px sans-serif;
+  background: lightsteelblue; /* Keeping the background the same */
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
+  opacity: 1; /* Fully opaque */
+}
+
+/*Simple Menu*/
+
+/* NAVIGATION */
+
+nav {
+  display: flex;
+  background-color:#F5F3EF;
+  border: #F5F3EF;
+  justify-content: space-between; /* Aligns items to the start and end of the flex container */
+  align-items: center; /* Vertically centers items in the flex container */
+  padding: 20px 20px 20px 20px; /* Add padding for spacing */
+}
+
+#logo-link {
+  margin-right: auto; /* Push the logo to the left by setting margin-right to auto */
+}
+.nav-ul { 
+  margin: 10px auto 0;  /* Adjust the top margin to reduce space */
+  padding: 0; 
+  list-style: none; 
+  display: flex; /* Change to flex to create a horizontal layout */
+  justify-content: flex-end; /* Center the items horizontally */
+}
+
+.nav-li { 
+  font-family: "halyard-display", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 15px; /* Change the font size */
+  position: relative; 
+  padding: 15px 20px;
+  margin-right: 20px;
+}
+
+.nav-a {
+  color: black;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.15em;
+  font-family: "halyard-display", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 15px; /* Change the font size */
+  position: relative;
+  margin-right: 20px;
+}
+
+.nav-a:after {    
+  background: #fff repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: black;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+.nav-a:hover:after { 
+  width: 100%; 
+  left: 0; 
+}
+
+.content-wrapper {
+    display: flex;
+    max-width: 700px; /* Adjust the max-width according to your design */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 0px 20px 20px 20px; /* Optional padding for the container */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: left; /* For centering any text content */
+    margin: 0 auto;
+}
+
+/* Styling for the sub-menu */
+.nav-ul li {
+  position: relative;
+}
+
+.sub-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #F5F3EF;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  list-style: none; /* Remove default list styling */
+  padding: 0;
+  margin: 0;
+  width: 100%; /* Set the width to match the menu item */
+}
+
+.nav-ul li:hover .sub-menu {
+  display: block;
+}
+
+.sub-menu li {
+  padding: 10px;
+}
+
+.sub-menu li a {
+  color: black; /* Match the main menu text color */
+  text-decoration: none;
+  font-size: 15px; /* Match the main menu font size */
+  font-family: "halyard-display", sans-serif; /* Match the main menu font family */
+  font-weight: 200; /* Match the main menu font weight */
+  font-style: normal; /* Match the main menu font style */
+  display: block; /* Ensure sub-menu items are displayed as blocks */
+  text-align: center; /* Center the text */
+}
+
+.sub-menu li a:hover {
+  color: #CC0033;
+}
+
+
+#map_chi, #map_score, #map_chi_legislature, #map_score_legislature {
+    position: relative; /* This makes it a reference for absolute children positioning */
+}
+
+
+/* Style for the tooltip */
+.tooltip_score, .tooltip_chi, .tooltip_score_legislature, .tooltip_chi_legislature {
+    position: absolute;
+    text-align: center;
+    padding: 6px;
+    font: 20px normal;
+    background: lightsteelblue; 
+    border: 0px;
+    border-radius: 3px;
+    pointer-events: none;
+    opacity: 1; 
+}
+
+#map-legend_score, #map-legend_chi, #map-legend_score_legislature, #map-legend_chi_legislature {
+    position: absolute;
+    top: 15px;  /* Adjust as needed */
+    right: 15px; /* Adjust as needed, or change to left if you prefer */
+    z-index: 10; /* Higher than the map's z-index */
+    pointer-events: none; /* Makes it non-interactive so map can be interacted with */
+}
+
+/* Ensure the text and rects inside the legend are interactive for mouse events */
+#map-legend_score text,
+#map-legend_score rect {
+    pointer-events: all;
+}
+
+/* Ensure the text and rects inside the legend are interactive for mouse events */
+#map-legend_chi text,
+#map-legend_chi rect {
+    pointer-events: all;
+}
+
+/* Ensure the text and rects inside the legend are interactive for mouse events */
+#map-legend_score_legislature text,
+#map-legend_score_legislature rect {
+    pointer-events: all;
+}
+
+/* Ensure the text and rects inside the legend are interactive for mouse events */
+#map-legend_chi_legislature text,
+#map-legend_chi_legislature rect {
+    pointer-events: all;
+}
+
+/* Ensure the text and rects inside the legend are interactive for mouse events */
+#map-legend_chi text,
+#map-legend_chi rect {
+    pointer-events: all;
+}
+
+/* Creating an option for a thin border feature box*/
+.thin-box {
+  --border-color: #CC0033; 
+  border: 1px solid var(--border-color);
+  padding: 40px;
+  display: inline-block;
+}
+
+/* Style for the dropdown */
+.content-wrapper select {
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* Style for the copy button */
+.content-wrapper button {
+    margin-top: 10px; /* Adjust as needed for spacing */
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Style for the stat feature */
+    .stat-container {
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+    }
+
+    .stat {
+      width: 30%; /* Adjust the width as needed */
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin: 5px;
+      box-sizing: border-box;
+    }
+
+    .big-first-word {
+      font-size: 1.5em; /* Adjust the font size as needed */
+      line-height: 1.2; /* Adjust the line height as needed */
+    }
+
+/* Style for the table feature */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+}

@@ -1,0 +1,18 @@
+    .stat-container {
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+    }
+
+    .stat {
+      width: 30%; /* Adjust the width as needed */
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin: 5px;
+      box-sizing: border-box;
+    }
+
+    .big-first-word {
+      font-size: 1.5em; /* Adjust the font size as needed */
+      line-height: 1.2; /* Adjust the line height as needed */
+    }
