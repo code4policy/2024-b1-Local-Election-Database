@@ -76,7 +76,7 @@ svg.append("rect")
 async function drawMap() {
     try {
         // Load the CSV data
-        const data = await d3.csv("chi_square_results_with_female_representation_score_by_fips_legislature.csv").catch(error => {
+        const data = await d3.csv("../data/chi_square_results_with_female_representation_score_by_fips_legislature.csv").catch(error => {
             throw new Error(`Error loading CSV file: ${error.message}`);
         });
 console.log('No data found for', data);
