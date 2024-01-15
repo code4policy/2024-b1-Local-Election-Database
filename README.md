@@ -12,7 +12,7 @@ Team members include Brandon Martinez, Kazi Ahmed, Kimihiro Nakamura, and Sarah 
 
 The maps that display representation on a 10-point scale (e.g. "Heading of Scoring Map on gender-web-page") are for activists and organization leaders that would like a ready-made heuristic for governmental entities that represent social groups like women less than their share of the population. By applying a scalar rating system to the degree of descriptive representation in a community, we aim to give these users a clear way to identify communities that are similar to each other, as well as others that are markedly unrepresentative.
 
-To recreate the data we utilized, take the following steps: 
+To recreate the data we utilized, take the following steps for county executive election: 
 
 1. Download ledb_candidadatelevel.csv. This file contains original data from the [American Local Government Elections Database] (https://osf.io/mv5e6/).
 
@@ -22,7 +22,7 @@ To recreate the data we utilized, take the following steps:
 
 4. The program also merges the data with a file with data on the proportion of women per county. That file, counties_constituency_data1.csv, is another original dataset from the [American Local Government Elections Database] (https://osf.io/mv5e6/), and it is also available for download from this repository.
 
-5. Finally, the program also creates a representation variable: the number of female winners over the percentage of women in the population. We transformed this value into a representation score by multiplying each value (which was in the range {0,1}) by 10. 
+5. Finally, the program also creates a representation variable: the number of female winners over the percentage of women in the population. We transformed this value into a representation score by multiplying each value (which was in the range {0,2}) by 5. 
 
 ## Replicating the Chi-square Visualization
 
